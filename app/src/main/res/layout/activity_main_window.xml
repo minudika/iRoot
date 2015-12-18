@@ -6,6 +6,74 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainWindow">
 
-    <TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Result"
+        android:id="@+id/btnSubmit"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="From                :"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="To                     :"
+        android:id="@+id/textView2"
+        android:textSize="15dp"
+        android:layout_below="@+id/spinner_from"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_from"
+        android:spinnerMode="dropdown"
+
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/textView"
+        android:entries="@array/allLocations" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_to"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignEnd="@+id/spinner_from"
+        android:layout_toEndOf="@+id/textView2"
+        android:spinnerMode="dropdown"/>
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker"
+        android:layout_above="@+id/btnSubmit"
+        android:layout_alignStart="@+id/spinner_to"
+        android:layout_marginBottom="67dp"
+        android:timePickerMode="spinner" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Time           :"
+        android:id="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">iRoot</string>
+
+    <string-array name="root1">
+        <item>Moratuwa</item>
+        <item>Mount Lavenia</item>
+        <item>Dehiwala</item>
+        <item>Wellawatte</item>
+    </string-array>
+
+    <string-array name="root2">
+        <item>Badulla</item>
+        <item>Bandarawela</item>
+        <item>Rathnapura</item>
+        <item>Awissawella</item>
+    </string-array>
+
+    <string-array name="allLocations">
+        <item>Moratuwa</item>
+        <item>Mount Lavenia</item>
+        <item>Dehiwala</item>
+        <item>Wellawatte</item>
+        <item>Badulla</item>
+        <item>Bandarawela</item>
+        <item>Rathnapura</item>
+        <item>Awissawella</item>
+    </string-array>
+
+
 </resources>
