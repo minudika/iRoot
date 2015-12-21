@@ -27,6 +27,11 @@ public class MainWindow extends Activity {
     String[]root1;
     String[] root2;
     String[] allLocations;
+    String[] busStopIds;
+    String[] rootDirecion;
+    String[] rootIds;
+    ArrayList<String>allBusStops;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +45,13 @@ public class MainWindow extends Activity {
 
         root1=getResources().getStringArray(R.array.root1);
         root2=getResources().getStringArray(R.array.root2);
-      //s  allLocations=getResources().getStringArray(R.array.allLocations);
+        allLocations=getResources().getStringArray(R.array.busStopNames);
+        busStopIds = getResources().getStringArray(R.array.busStopIds);
+        rootDirecion = getResources().getStringArray(R.array.rootDirection);
+        rootIds = getResources().getStringArray(R.array.rootIds);
 
-
+        populateAllLocationList();
+        populateStartLocaionSpinner(allBusStops);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +64,7 @@ public class MainWindow extends Activity {
         spinnerStartLocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
                 String startLocation = parent.getItemAtPosition(position).toString();
-                populateEndLocaitonSpinner(getRootLocations(startLocation));
+                populateEndLocaitonSpinner(getEndLocations(startLocation));
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
@@ -95,13 +104,9 @@ public class MainWindow extends Activity {
         ArrayAdapter<String> adp = new ArrayAdapter<String> (context,android.R.layout.simple_spinner_dropdown_item,arrayList);
         // APP CURRENTLY CRASHING HERE
         spinnerEndLocation.setAdapter(adp);
-
     }
 
-
-
     @TargetApi(Build.VERSION_CODES.M)
-
     public void pickTime(){
         long time=timePicker.getDrawingTime();
         int hour=timePicker.getCurrentHour();
@@ -110,34 +115,26 @@ public class MainWindow extends Activity {
 
     }
 
-    public ArrayList<String> getRootLocations(String startLocation){
-        ArrayList<String>list1=new ArrayList<String>();
-        ArrayList<String>list2=new ArrayList<String>();
-        ArrayList locations=new ArrayList<String>();
+    public ArrayList<String> getEndLocations(String startLocation){
+        ArrayList<String> list=new ArrayList<String>();
+        //ArrayList<String>list2=new ArrayList<String>();
+        ArrayList endLocations=new ArrayList<String>();
 
-        for(String s:root1){
-            list1.add(s);
-        }
-        for(String s:root2){
-            list2.add(s);
-        }
+        int index = allBusStops.indexOf(startLocation);
+        String rootId = rootIds[index];
 
-        if(list1.indexOf(startLocation)!=-1){
-            int index=list1.indexOf(startLocation);
-            for(int i=index+1;i<list1.size();i++){
-                locations.add(list1.get(i));
+        for(int i=0; i<allLocations.length; i++){
+            if(rootIds[i].equals(rootId) && !allLocations[i].equals(startLocation)){
+                endLocations.add(allLocations[i]);
             }
-            return locations;
         }
+        return endLocations;
+    }
 
-        if(list2.indexOf(startLocation)!=-1){
-            int index=list2.indexOf(startLocation);
-            for(int i=index+1;i<list2.size();i++){
-                locations.add(list2.get(i));
-            }
-            return locations;
+    private void populateAllLocationList(){
+        allBusStops = new ArrayList<String>();
+        for(String str:allLocations){
+            allBusStops.add(str);
         }
-
-        return locations;
     }
 }

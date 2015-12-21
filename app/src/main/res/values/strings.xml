@@ -26,5 +26,1169 @@
         <item>Awissawella</item>
     </string-array>
 
+    <string-array name="busStopIds">
+        <item>9990</item>
+        <item>804</item>
+        <item>29674</item>
+        <item>33291</item>
+        <item>1282</item>
+        <item>BP3912</item>
+        <item>33549</item>
+        <item>143</item>
+        <item>375</item>
+        <item>7824</item>
+        <item>9988</item>
+        <item>33321</item>
+        <item>BP4608</item>
+        <item>9992</item>
+        <item>1284</item>
+        <item>33260</item>
+        <item>33326</item>
+        <item>33320</item>
+        <item>BP5283</item>
+        <item>1042</item>
+        <item>BP3536</item>
+        <item>377</item>
+        <item>29676</item>
+        <item>1277</item>
+        <item>1609</item>
+        <item>BP842</item>
+        <item>BP5972</item>
+        <item>33322</item>
+        <item>33325</item>
+        <item>BP2167</item>
+        <item>BP2778</item>
+        <item>R0085</item>
+        <item>4714</item>
+        <item>BP199</item>
+        <item>331</item>
+        <item>4838</item>
+        <item>324</item>
+        <item>1275</item>
+        <item>29735</item>
+        <item>9986</item>
+        <item>1286</item>
+        <item>1691</item>
+        <item>BP1795</item>
+        <item>1293</item>
+        <item>23341</item>
+        <item>9991</item>
+        <item>4711</item>
+        <item>315</item>
+        <item>1692</item>
+        <item>30743</item>
+        <item>29684</item>
+        <item>1289</item>
+        <item>1291</item>
+        <item>9993</item>
+        <item>34055</item>
+        <item>BP2028</item>
+        <item>312</item>
+        <item>80011</item>
+        <item>9989</item>
+        <item>7823</item>
+        <item>1283</item>
+        <item>376</item>
+        <item>8348</item>
+        <item>1276</item>
+        <item>330</item>
+        <item>606</item>
+        <item>751</item>
+        <item>1285</item>
+        <item>29775</item>
+        <item>1278</item>
+        <item>1041</item>
+        <item>660</item>
+        <item>BP4242</item>
+        <item>BP3504</item>
+        <item>166</item>
+        <item>4839</item>
+        <item>34182</item>
+        <item>14639</item>
+        <item>21</item>
+        <item>9982</item>
+        <item>BP833</item>
+        <item>37643</item>
+        <item>24180</item>
+        <item>1280</item>
+        <item>1287</item>
+        <item>805</item>
+        <item>675</item>
+        <item>37317</item>
+        <item>7724</item>
+        <item>1937</item>
+        <item>10352</item>
+        <item>34846</item>
+        <item>1735</item>
+        <item>20628</item>
+        <item>1472</item>
+        <item>9045</item>
+        <item>8558</item>
+        <item>FC44</item>
+        <item>4645</item>
+        <item>14540</item>
+        <item>901</item>
+        <item>20674</item>
+        <item>14520</item>
+        <item>8560</item>
+        <item>29844</item>
+        <item>14510</item>
+        <item>2051</item>
+        <item>15783</item>
+        <item>14527</item>
+        <item>902</item>
+        <item>R0868</item>
+        <item>4894</item>
+        <item>33431</item>
+        <item>FC60</item>
+        <item>34246</item>
+        <item>8578</item>
+        <item>BP5408</item>
+        <item>33107</item>
+        <item>R0757</item>
+        <item>2238</item>
+        <item>8419</item>
+        <item>348</item>
+        <item>2046</item>
+        <item>35484</item>
+        <item>BP976</item>
+        <item>BP5307</item>
+        <item>14522</item>
+        <item>BP5575</item>
+        <item>1740</item>
+        <item>2068</item>
+        <item>944</item>
+        <item>1577</item>
+        <item>1157</item>
+        <item>2018</item>
+        <item>8586</item>
+        <item>4644</item>
+        <item>BP5998</item>
+        <item>14456</item>
+        <item>2058</item>
+        <item>14531</item>
+        <item>4825</item>
+        <item>14529</item>
+        <item>2070</item>
+        <item>R0674</item>
+        <item>4828</item>
+        <item>900</item>
+        <item>8559</item>
+        <item>943</item>
+        <item>BP3442</item>
+        <item>4876</item>
+        <item>29981</item>
+        <item>8577</item>
+        <item>7725</item>
+        <item>33924</item>
+        <item>976</item>
+        <item>8556</item>
+        <item>25096</item>
+        <item>3013</item>
+        <item>4897</item>
+        <item>14581</item>
+        <item>R0330</item>
+        <item>14528</item>
+        <item>1473</item>
+        <item>14535</item>
+        <item>1736</item>
+        <item>R0325</item>
+        <item>2050</item>
+        <item>BP3460</item>
+        <item>371</item>
+        <item>2043</item>
+        <item>8590</item>
+        <item>FC41</item>
+        <item>14515</item>
+        <item>8019</item>
+        <item>1057</item>
+        <item>8420</item>
+        <item>1578</item>
+        <item>33683</item>
+        <item>2067</item>
+        <item>2019</item>
+        <item>1156</item>
+        <item>2045</item>
+        <item>4896</item>
+        <item>947</item>
+        <item>4826</item>
+        <item>2059</item>
+        <item>1739</item>
+        <item>14530</item>
+        <item>14523</item>
+        <item>BP5244</item>
+        <item>8571</item>
+        <item>BP5294</item>
+        <item>BP4269</item>
+        <item>2952</item>
+        <item>945</item>
+        <item>35030</item>
+        <item>8579</item>
+        <item>20760</item>
+        <item>37219</item>
+        <item>BP1379</item>
+        <item>BP2895</item>
+        <item>4643</item>
+        <item>14511</item>
+        <item>165</item>
+        <item>1045</item>
+        <item>308</item>
+        <item>2632</item>
+        <item>988</item>
+        <item>2622</item>
+        <item>BP5486</item>
+        <item>34716</item>
+        <item>14920</item>
+        <item>616</item>
+        <item>2636</item>
+        <item>1802</item>
+        <item>29245</item>
+        <item>791</item>
+        <item>320</item>
+        <item>BP5485</item>
+        <item>297</item>
+        <item>BP5484</item>
+        <item>BP5172</item>
+        <item>2640</item>
+        <item>793</item>
+        <item>14682</item>
+        <item>15192</item>
+        <item>34</item>
+        <item>1115</item>
+        <item>36857</item>
+        <item>BP3203</item>
+        <item>36602</item>
+        <item>R0078</item>
+        <item>33477</item>
+        <item>782</item>
+        <item>2626</item>
+        <item>2271</item>
+        <item>905</item>
+        <item>34717</item>
+        <item>1054</item>
+        <item>913</item>
+        <item>BP4921</item>
+        <item>BP5529</item>
+        <item>37229</item>
+        <item>27945</item>
+        <item>2269</item>
+        <item>1011</item>
+        <item>989</item>
+        <item>33447</item>
+        <item>2270</item>
+        <item>1046</item>
+        <item>2638</item>
+        <item>4900</item>
+        <item>99</item>
+        <item>2637</item>
+        <item>14237</item>
+        <item>792</item>
+        <item>33093</item>
+        <item>2627</item>
+        <item>2272</item>
+        <item>BP882</item>
+        <item>7851</item>
+        <item>192</item>
+        <item>161</item>
+        <item>1017</item>
+        <item>26591</item>
+        <item>790</item>
+        <item>982</item>
+        <item>2633</item>
+        <item>930</item>
+        <item>4716</item>
+        <item>20684</item>
+        <item>305</item>
+        <item>129</item>
+        <item>14219</item>
+        <item>2268</item>
+        <item>1801</item>
+        <item>20997</item>
+        <item>2648</item>
+        <item>197</item>
+        <item>1114</item>
+        <item>64</item>
+        <item>13506</item>
+        <item>783</item>
+        <item>2639</item>
+        <item>36947</item>
+        <item>37122</item>
+        <item>200</item>
+        <item>7982</item>
+    </string-array>
+
+    <string-array name="busStopNames">
+        <item>Mattison Road</item>
+        <item>Falkland Road</item>
+        <item>Gower Street / University College Hosp</item>
+        <item>Mornington Crescent Station</item>
+        <item>Murray Street</item>
+        <item>Finsbury Park Station</item>
+        <item>Warren Street Station  / Euston Road</item>
+        <item>Trafalgar Square / Charing Cross Stn</item>
+        <item>Turnpike Lane Station</item>
+        <item>Leicester Square Station</item>
+        <item>Beresford Road</item>
+        <item>Sobell Centre</item>
+        <item>Manor House Station</item>
+        <item>Endymion Road</item>
+        <item>Camden Park Road</item>
+        <item>Pratt Street</item>
+        <item>Hillmarton Road / H M Prison Holloway</item>
+        <item>Berriman Road</item>
+        <item>Tottenham Court Road Station</item>
+        <item>St Ann\'s Road</item>
+        <item>St Martin\'s Place</item>
+        <item>Finsbury Park / Blackstock Road</item>
+        <item>Chenies Street</item>
+        <item>Silverdale</item>
+        <item>Alexandra Grove</item>
+        <item>Rowley Gardens</item>
+        <item>Isledon Road</item>
+        <item>Holloway Road</item>
+        <item>Caledonian Road</item>
+        <item>Torrington Place</item>
+        <item>Brampton Park Road</item>
+        <item>Cambridge Circus</item>
+        <item>Brecknock Road</item>
+        <item>Portland Rise</item>
+        <item>Camden Road Station</item>
+        <item>Harringay Green Lanes Station</item>
+        <item>Camden Town Station</item>
+        <item>Robert Street</item>
+        <item>Great Russell Street</item>
+        <item>West Green Road</item>
+        <item>Hilldrop Road</item>
+        <item>Sandall Road</item>
+        <item>Lordship Lane</item>
+        <item>Durham Road</item>
+        <item>Coleraine Road</item>
+        <item>Mattison Road</item>
+        <item>Alexandra Grove</item>
+        <item>Seven Sisters Road / Nags Head</item>
+        <item>Sandall Road</item>
+        <item>Wood Green Station</item>
+        <item>Denmark Street</item>
+        <item>Chambers Road</item>
+        <item>Hornsey Road</item>
+        <item>Endymion Road</item>
+        <item>Fonthill Road</item>
+        <item>Percy Street</item>
+        <item>Holloway / Nags Head</item>
+        <item>St Pancras Way</item>
+        <item>Beresford Road</item>
+        <item>Leicester Square Station</item>
+        <item>Murray Street</item>
+        <item>Finsbury Park / Blackstock Road</item>
+        <item>Warren Street Station</item>
+        <item>Robert Street</item>
+        <item>Camden Road Station</item>
+        <item>Manor House Station  / Woodberry Grove</item>
+        <item>Brecknock Road</item>
+        <item>Torriano Avenue</item>
+        <item>Turnpike Lane Station</item>
+        <item>Silverdale</item>
+        <item>St Ann\'s Road</item>
+        <item>Goodge Street Station</item>
+        <item>Finsbury Park Station</item>
+        <item>Trafalgar Square / Charing Cross Stn</item>
+        <item>Tottenham Court Road Station</item>
+        <item>Harringay Green Lanes Station</item>
+        <item>Camden Town Station</item>
+        <item>Mornington Crescent Station</item>
+        <item>H M Prison Holloway</item>
+        <item>Wood Green Shopping City</item>
+        <item>Rowley Gardens</item>
+        <item>Cambridge Circus</item>
+        <item>Camden Town / Camden Road</item>
+        <item>Camden High Street</item>
+        <item>Hilldrop Road</item>
+        <item>Falkland Road</item>
+        <item>Hampstead Road / Drummond Street</item>
+        <item>Tottenham Court Road Station</item>
+        <item>Queen Mary / University Of London</item>
+        <item>Woodgrange Road</item>
+        <item>Bank Station  / Poultry</item>
+        <item>Holles Street</item>
+        <item>Stepney Green</item>
+        <item>Holborn Circus / Fetter Lane</item>
+        <item>Chancery Lane Station</item>
+        <item>Green Street</item>
+        <item>Bank Station  / Cornhill</item>
+        <item>Chapel Road</item>
+        <item>Little Ilford Lane</item>
+        <item>North Circular Road</item>
+        <item>Bow Road Station</item>
+        <item>Mile End Station</item>
+        <item>Shrewsbury Road</item>
+        <item>Bishopsgate</item>
+        <item>Museum Street</item>
+        <item>Margery Park Road</item>
+        <item>Booth Memorial</item>
+        <item>Great Titchfield St / Oxford Circus Stn</item>
+        <item>First Avenue</item>
+        <item>Bow Church Station</item>
+        <item>Hainault Street</item>
+        <item>Water Lane / University Of East London</item>
+        <item>Aldgate East Station</item>
+        <item>Redbridge Central Library</item>
+        <item>Stratford Centre</item>
+        <item>St Mary Axe</item>
+        <item>Adler Street</item>
+        <item>Procter Street</item>
+        <item>Ilford Hill</item>
+        <item>Litchfield Avenue</item>
+        <item>Brownlow Street</item>
+        <item>Bow Church</item>
+        <item>The East London Mosque</item>
+        <item>St Katharine Cree</item>
+        <item>Stratford Bus Station</item>
+        <item>Stratford Bus Station</item>
+        <item>Woodgrange Park Station</item>
+        <item>St Paul\'s Station</item>
+        <item>Katherine Road</item>
+        <item>Warton Road</item>
+        <item>Royal London Hospital / Whitechapel Stn</item>
+        <item>Atherton Leisure Centre</item>
+        <item>City Thameslink Station</item>
+        <item>Holborn Circus</item>
+        <item>King Edward Street</item>
+        <item>High Street North</item>
+        <item>Aldgate Station</item>
+        <item>New Oxford Street</item>
+        <item>Coborn Road</item>
+        <item>Seventh Avenue</item>
+        <item>Regents Canal</item>
+        <item>Rabbits Road</item>
+        <item>Stratford High St Stn  / Carpenters Road</item>
+        <item>Bancroft Road / Ocean Estate</item>
+        <item>Stepney Green Station</item>
+        <item>Bow Road Station</item>
+        <item>Bank Station  / Cornhill</item>
+        <item>Whitechapel Station  / Royal London Hosp</item>
+        <item>St Paul\'s Station</item>
+        <item>Woodgrange Road</item>
+        <item>Bow Church</item>
+        <item>St Mary Axe</item>
+        <item>Queen Mary / University Of London</item>
+        <item>Great Titchfield St / Oxford Circus Stn</item>
+        <item>Wardour Street</item>
+        <item>Bread Street</item>
+        <item>Bow Church Station</item>
+        <item>Little Ilford Lane</item>
+        <item>Warton Road</item>
+        <item>Green Street</item>
+        <item>Whitechapel Station</item>
+        <item>First Avenue</item>
+        <item>Brownlow Street</item>
+        <item>Dersingham Avenue</item>
+        <item>Stepney Green</item>
+        <item>Shrewsbury Road</item>
+        <item>Booth Memorial</item>
+        <item>Redbridge Central Library</item>
+        <item>Old Town Hall</item>
+        <item>Adler Street</item>
+        <item>Poultry / Bank Station</item>
+        <item>Hainault Street</item>
+        <item>Sprowston Road</item>
+        <item>Stratford Centre</item>
+        <item>Holborn Station</item>
+        <item>Chancery Lane Station</item>
+        <item>Atherton Leisure Centre</item>
+        <item>Aldgate Station</item>
+        <item>Abbey Lane</item>
+        <item>Holborn Circus / Fetter Lane</item>
+        <item>City Thameslink Station</item>
+        <item>The East London Mosque</item>
+        <item>Water Lane / University Of East London</item>
+        <item>Stepney Green Station</item>
+        <item>Mile End Station</item>
+        <item>Coborn Road</item>
+        <item>Katherine Road</item>
+        <item>Rabbits Road</item>
+        <item>Woodgrange Park Station</item>
+        <item>Aldgate East Station</item>
+        <item>Holborn Circus</item>
+        <item>New Oxford Street / High Holborn</item>
+        <item>Holles Street</item>
+        <item>Ocean Estate</item>
+        <item>Sidney Street</item>
+        <item>Tottenham Court Road Station</item>
+        <item>St Katharine Cree</item>
+        <item>Stratford High St / Carpenters Road</item>
+        <item>Ilford Broadway</item>
+        <item>Chapel Road</item>
+        <item>Regents Canal</item>
+        <item>High Street North</item>
+        <item>Margery Park Road</item>
+        <item>Oxford Street / Soho Street</item>
+        <item>Sadler\'s Wells Theatre</item>
+        <item>Graham Road / Hackney Central</item>
+        <item>Northchurch Road</item>
+        <item>Green Park / Constitution Hill</item>
+        <item>Clerkenwell Road</item>
+        <item>Museum Street</item>
+        <item>Piccadilly Circus</item>
+        <item>Essex Road Station</item>
+        <item>Mount Pleasant</item>
+        <item>Essex Road / Marquess Road</item>
+        <item>Finsbury Town Hall</item>
+        <item>Millfields Road</item>
+        <item>Islington Green</item>
+        <item>Dalston Junction</item>
+        <item>Bloomsbury Way</item>
+        <item>St John Street / Goswell Road</item>
+        <item>Royal Oak Road</item>
+        <item>Cambridge Circus</item>
+        <item>Balls Pond Road / Burder Road</item>
+        <item>Cross Street</item>
+        <item>Red Lion Street</item>
+        <item>Green Park Station</item>
+        <item>Victoria Bus Station</item>
+        <item>Greenwood Road</item>
+        <item>Hyde Park Corner</item>
+        <item>Hackney Baths</item>
+        <item>Angel Station</item>
+        <item>Gray\'s Inn Road</item>
+        <item>Bressenden Place</item>
+        <item>Stannard Road</item>
+        <item>Packington Street</item>
+        <item>Clapton Square</item>
+        <item>Essex Road / Newington Green Road</item>
+        <item>Old Bond Street / Royal Academy</item>
+        <item>Dean Street / Chinatown</item>
+        <item>Southgate Road</item>
+        <item>Hackney Central Station</item>
+        <item>Pembury Circus</item>
+        <item>Trocadero / Haymarket</item>
+        <item>Wilton Street</item>
+        <item>Clapton Girls\' Academy</item>
+        <item>Clapton Pond</item>
+        <item>Old Park Lane / Hard Rock Cafe</item>
+        <item>Grosvenor Gardens</item>
+        <item>Hackney Baths</item>
+        <item>Sadler\'s Wells Theatre</item>
+        <item>Mildmay Park / Southgate Road</item>
+        <item>Hyde Park Corner</item>
+        <item>Green Park Station</item>
+        <item>Ockendon Road</item>
+        <item>Hardwick Street</item>
+        <item>Cross Street</item>
+        <item>Red Lion Street</item>
+        <item>Packington Street</item>
+        <item>Mare Street / Narrow Way</item>
+        <item>Tottenham Court Road Station</item>
+        <item>Gerrard Place / Chinatown</item>
+        <item>Lea Bridge Roundabout</item>
+        <item>Trocadero / Haymarket</item>
+        <item>St John Street / Goswell Road</item>
+        <item>Essex Road Station</item>
+        <item>Islington Green</item>
+        <item>Bloomsbury Square</item>
+        <item>Northchurch Road</item>
+        <item>Glenarm Road</item>
+        <item>Angel Station</item>
+        <item>Mount Pleasant</item>
+        <item>Hackney Central Station</item>
+        <item>Amhurst Road / Hackney Downs Station</item>
+        <item>Dalston Lane / Dalston Junction Station</item>
+        <item>Clapton Girls\' Academy</item>
+        <item>Tysoe Street</item>
+        <item>Hackney Central / Mare Street</item>
+        <item>Royal Oak Road</item>
+        <item>Rosebery Avenue</item>
+        <item>Greenwood Road</item>
+        <item>Clapton Pond</item>
+        <item>Kingsland High Street</item>
+        <item>Stannard Road</item>
+        <item>Culford Road</item>
+        <item>Old Bond Street / Royal Academy</item>
+        <item>Piccadilly Circus</item>
+        <item>Gray\'s Inn Road</item>
+        <item>Wilton Street</item>
+    </string-array>
+
+    <string-array name="rootDirection">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+    </string-array>
+    
+    <string-array name="rootIds">
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>29</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+        <item>38</item>
+    </string-array>
+
 
 </resources>
