@@ -32,12 +32,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-/*import org.ksoap2.SoapEnvelope;
-import org.ksoap2.serialization.PropertyInfo;
-import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapPrimitive;
-import org.ksoap2.serialization.SoapSerializationEnvelope;
-import org.ksoap2.transport.HttpTransportSE;*/
+import wso2.org.utils.XMLParser;
+
 
 public class MainWindow extends Activity {
     Spinner spinnerStartLocation;
@@ -51,18 +47,11 @@ public class MainWindow extends Activity {
     String[] busStopIds;
     String[] rootDirecion;
     String[] rootIds;
+    String[] results;
     ArrayList<String> allBusStops;
     String stringFrom, stringTo;
+    XMLParser xmlParser;
 
-    //--------------------------------
-    private final String NAMESPACE = "http://www.w3schools.com/webservices/";
-    private final String URL = "http://www.w3schools.com/webservices/tempconvert.asmx";
-    private final String SOAP_ACTION = "http://www.w3schools.com/webservices/CelsiusToFahrenheit";
-    private final String METHOD_NAME = "CelsiusToFahrenheit";
-    private String TAG = "MINUDIKA";
-    private static String celcius;
-    private static String fahren;
-    //--------------------------------
 
     HttpClient client;
     HttpPost post;
@@ -98,6 +87,8 @@ public class MainWindow extends Activity {
         String url = "http://192.168.43.8:9763/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/";
         post = new HttpPost(url);
         post2 = new HttpPost(url);
+        final Intent intent = new Intent(context, DisplayResults.class);
+
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +97,10 @@ public class MainWindow extends Activity {
                 //pickTime();
                 //startActivity(new Intent(context,MainWindow.class));
                 new login().execute("");
+                Bundle bundle = new Bundle();
+                bundle.putStringArray("array", results);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
@@ -123,14 +118,7 @@ public class MainWindow extends Activity {
     }
 
     public void populateEndLocaitonSpinner(ArrayList<String> arrayList) {
-        /*ArrayList<String> arrayList=new ArrayList<String>();
 
-        arrayList.add("Moratuwa");
-        arrayList.add("Mount Lavenia");
-        arrayList.add("Dehiwala");
-        arrayList.add("Wellawatte");
-        arrayList.add("Bambalapitiya");
-*/
         ArrayAdapter<String> adp = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, arrayList);
         // APP CURRENTLY CRASHING HERE
         spinnerEndLocation.setAdapter(adp);
@@ -139,7 +127,7 @@ public class MainWindow extends Activity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
                 String endLocation = parent.getItemAtPosition(position).toString();
                 stringTo = endLocation;
-                // Toast.makeText(parent.getContext(), city, Toast.LENGTH_LONG).show();
+
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
@@ -173,20 +161,13 @@ public class MainWindow extends Activity {
         String rootDir = rootDirecion[index];
 
 
-        /*for (int i = 0; i < allLocations.length; i++) {
-            if (rootIds[i].equals(rootId) && !allLocations[i].equals(startLocation)) {
+        if (rootDir.equals("1")) {
+            for (int i = index + 1; i < allLocations.length; i++) {
                 endLocations.add(allLocations[i]);
             }
-        }*/
+        } else {
 
-        if(rootDir.equals("1")){
-            for(int i=index+1; i<allLocations.length; i++){
-                endLocations.add(allLocations[i]);
-            }
-        }
-        else{
-
-            for(int i=index-1; i>=0; i--){
+            for (int i = index - 1; i >= 0; i--) {
                 endLocations.add(allLocations[i]);
             }
         }
@@ -200,74 +181,12 @@ public class MainWindow extends Activity {
         }
     }
 
-   /* private class AsyncCallWS extends AsyncTask<String, Void, Void> {
-        @Override
-        protected Void doInBackground(String... params) {
-            Log.i(TAG, "doInBackground");
-            // getFahrenheit(celcius);
-            getResponse();
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            Log.i(TAG, "onPostExecute");
-            //tv.setText(fahren + "° F");
-        }
-
-        @Override
-        protected void onPreExecute() {
-            Log.i(TAG, "onPreExecute");
-            //tv.setText("Calculating...");
-        }
-
-        @Override
-        protected void onProgressUpdate(Void... values) {
-            Log.i(TAG, "onProgressUpdate");
-        }
-    }*/
-
-    /*public void getResponse() {
-        //Create request
-        SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
-        //Property which holds input parameters
-        PropertyInfo celsiusPI = new PropertyInfo();
-        //Set Name
-        celsiusPI.setName("Celsius");
-        //Set Value
-        //   celsiusPI.setValue(celsius);
-        //Set dataType
-        celsiusPI.setType(double.class);
-        //Add the property to request object
-        request.addProperty(celsiusPI);
-        //Create envelope
-        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-                SoapEnvelope.VER11);
-        envelope.dotNet = true;
-        //Set output SOAP object
-        envelope.setOutputSoapObject(request);
-        //Create HTTP call object
-        HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
-
-        try {
-            //Invole web service
-            androidHttpTransport.call(SOAP_ACTION, envelope);
-            //Get the response
-            SoapPrimitive response = (SoapPrimitive) envelope.getResponse();
-            //Assign it to fahren static variable
-            fahren = response.toString();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
-
-    private class login extends AsyncTask<String, Void, JSONObject> {
+    private class login extends AsyncTask<String, Void, String[]> {
 
         ProgressDialog dialog = ProgressDialog.show(context, "", "Retrieving results, Please wait...");
 
         @Override
-        protected JSONObject doInBackground(String... params) {
+        protected String[] doInBackground(String... params) {
             Log.i("thread", "Doing Something...");
 
             try {
@@ -280,31 +199,21 @@ public class MainWindow extends Activity {
                 post.setHeader("Accept-Encoding", "gzip,deflate");
                 post.setHeader("Content-Type", "text/xml;charset=UTF-8");
                 post.setHeader("SOAPAction", "urn:putMessage");
-             //  post.setHeader("Content-Length","309");
-//                post.setHeader("Host","10.100.4.177:9443");
-//                post.setHeader("User-Agent","Apache-HttpClient/4.1.1 (java 1.5)");
+
 
                 post2.setHeader("Accept-Encoding", "gzip,deflate");
                 post2.setHeader("Content-Type", "text/xml;charset=UTF-8");
                 post2.setHeader("SOAPAction", "urn:getLastMessage");
-            //    post.setHeader("Content-Length","222");
 
-              /* StringEntity stringEntity = new StringEntity("<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:app=\"http://app.android.wso2.com\">" +
+
+                StringEntity stringEntity = new StringEntity("<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:app=\"http://app.android.wso2.com\">" +
                         "   <soapenv:Header/>" +
                         "   <soapenv:Body>" +
-                        "      <app:getLastMessage/>" +
+                        "   <app:putMessage>" +
+                        "  <app:message>minudika</app:message>" +
+                        "   </app:putMessage>" +
                         "   </soapenv:Body>" +
-                        "</soapenv:Envelope>", "UTF-8");
-                stringEntity.setContentType("text/xml");*/
-
-                StringEntity stringEntity = new StringEntity("<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:app=\"http://app.android.wso2.com\">"+
-                "   <soapenv:Header/>"+
-                "   <soapenv:Body>"+
-                "   <app:putMessage>"+
-                "  <app:message>minudika</app:message>"+
-                "   </app:putMessage>"+
-                "   </soapenv:Body>"+
-                "   </soapenv:Envelope>", "UTF-8");
+                        "   </soapenv:Envelope>", "UTF-8");
                 stringEntity.setContentType("text/xml");
 
 
@@ -317,24 +226,22 @@ public class MainWindow extends Activity {
                 stringEntity.setContentType("text/xml");
 
 
-
-
-
-
                 post.setEntity(stringEntity);
                 post2.setEntity(stringEntity2);
 
-            //post.setEntity(new UrlEncodedFormEntity(pairs));
-                HttpResponse response1 = client.execute(post);
+
+                client.execute(post);
                 HttpResponse response = client.execute(post2);
                 int status = response.getStatusLine().getStatusCode();
 
                 if (status == 200) {
                     HttpEntity e = response.getEntity();
                     String data = EntityUtils.toString(e);
-                    JSONObject last = new JSONObject(data);
+                    xmlParser = new XMLParser(data);
+                    results = xmlParser.getData();
+                    //JSONObject last = new JSONObject(data);
                     dialog.dismiss();
-                    return last;
+                    return null;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -342,42 +249,6 @@ public class MainWindow extends Activity {
             return null;
         }
 
-        protected void onPreExecute() {
-            //dialog.dismiss();
-            Log.i("thread", "Started...");
-            dialog.show();
-        }
-
-        protected void onPostExecute(JSONObject result) {
-            Log.i("thread", "Done...");
-            String from;
-            String to;
-            try {
-                from = result.getString("from");
-                to = result.getString("to");
-
-                if (dialog != null) {
-                    dialog.dismiss();
-                } else {
-                }
-
-
-                //   tv.setText("Login Successful...");
-
-                Bundle newbundle = new Bundle();
-                newbundle.putString("from", from);
-                newbundle.putString("to", to);
-
-                Intent myIntent = new Intent(context, DisplayResults.class);
-                myIntent.putExtras(newbundle);
-
-                startActivity(myIntent);
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
 
     }
 
