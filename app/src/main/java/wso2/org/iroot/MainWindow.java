@@ -32,6 +32,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.transform.Result;
+
 import wso2.org.utils.XMLParser;
 
 
@@ -41,8 +43,8 @@ public class MainWindow extends Activity {
     Button btnSubmit;
     TimePicker timePicker;
     Context context = this;
-    String[] root1;
-    String[] root2;
+    String[] root_1;
+    String[] root_2;
     String[] allLocations;
     String[] busStopIds;
     String[] rootDirecion;
@@ -70,8 +72,8 @@ public class MainWindow extends Activity {
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
         timePicker = (TimePicker) findViewById(R.id.timePicker);
         timePicker.setIs24HourView(true);
-        root1 = getResources().getStringArray(R.array.root1);
-        root2 = getResources().getStringArray(R.array.root2);
+        root_1 = getResources().getStringArray(R.array.root_1);
+        root_2 = getResources().getStringArray(R.array.root_2);
         allLocations = getResources().getStringArray(R.array.busStopNames);
         busStopIds = getResources().getStringArray(R.array.busStopIds);
         rootDirecion = getResources().getStringArray(R.array.rootDirection);
@@ -97,10 +99,11 @@ public class MainWindow extends Activity {
                 //pickTime();
                 //startActivity(new Intent(context,MainWindow.class));
                 new login().execute("");
-                Bundle bundle = new Bundle();
+
+                /*Bundle bundle = new Bundle();
                 bundle.putStringArray("array", results);
                 intent.putExtras(bundle);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
 
@@ -239,15 +242,23 @@ public class MainWindow extends Activity {
                     String data = EntityUtils.toString(e);
                     xmlParser = new XMLParser(data);
                     results = xmlParser.getData();
-                    //JSONObject last = new JSONObject(data);
                     dialog.dismiss();
-                    return null;
+                    return results;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return null;
+            return results;
         }
+
+        protected void onPostExecute(String[] result) {
+            Intent i=new Intent(context,DisplayResults.class);
+            Bundle bundle = new Bundle();
+            bundle.putStringArray("results",result);
+            i.putExtras(bundle);
+            startActivity(i);
+        }
+
 
 
     }
