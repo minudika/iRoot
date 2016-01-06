@@ -99,7 +99,8 @@ public class MainWindow extends Activity {
         //http://10.100.5.59:9783/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/
         //String url = "http://10.0.2.2:9763/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/";
         String url = "http://ec2-52-77-236-192.ap-southeast-1.compute.amazonaws.com:9763/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint";
-        post = new HttpPost(url);
+        String url2 ="http://ec2-52-77-236-192.ap-southeast-1.compute.amazonaws.com:9763/endpoints/MobileRequestReceiver";
+        post = new HttpPost(url2);
         post2 = new HttpPost(url);
         final Intent intent = new Intent(context, DisplayResults.class);
 
@@ -318,7 +319,11 @@ public class MainWindow extends Activity {
                         "   <soapenv:Header/>" +
                         "   <soapenv:Body>" +
                         "   <app:putMessage>" +
-                        "  <app:message>"+stringFrom+":"+stringTo+"</app:message>" +
+                        "  <app:message>" +
+                        " <from>"+stringFrom+"</from>"+
+                        " <to>"+stringTo+"</to>"+
+                        " <time>12</time>"+
+                        "</app:message>" +
                         "   </app:putMessage>" +
                         "   </soapenv:Body>" +
                         "   </soapenv:Envelope>", "UTF-8");
@@ -338,7 +343,7 @@ public class MainWindow extends Activity {
                 post2.setEntity(stringEntity2);
 
 
-                client.execute(post);
+               client.execute(post);
                 HttpResponse response = client.execute(post2);
                 int status = response.getStatusLine().getStatusCode();
 
