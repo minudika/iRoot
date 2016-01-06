@@ -45,13 +45,23 @@ public class MainWindow extends Activity {
     Context context = this;
     String[] root_1;
     String[] root_2;
+    String[] root25_1,root25_2,root29_1,root29_2,root38_1,root38_2;
     String[] allLocations;
     String[] busStopIds;
     String[] rootDirecion;
     String[] rootIds;
     String[] results;
     ArrayList<String> allBusStops;
-    String stringFrom, stringTo;
+
+    ArrayList<String> root1;
+    ArrayList<String> root2;
+    ArrayList<String> root1_25;
+    ArrayList<String> root1_29;
+    ArrayList<String> root1_38;
+    ArrayList<String> root2_25;
+    ArrayList<String> root2_29;
+    ArrayList<String> root2_38;
+    String stringFrom,stringTo;
     XMLParser xmlParser;
 
 
@@ -79,6 +89,7 @@ public class MainWindow extends Activity {
         rootDirecion = getResources().getStringArray(R.array.rootDirection);
         rootIds = getResources().getStringArray(R.array.rootIds);
 
+        setFromResources();
         populateAllLocationList();
         populateStartLocaionSpinner(allBusStops);
 
@@ -86,7 +97,7 @@ public class MainWindow extends Activity {
         client = new DefaultHttpClient();
         //String url="https://10.100.4.177:9443/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/";
         //http://10.100.5.59:9783/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/
-        String url = "http://192.168.43.8:9763/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/";
+        String url = "http://10.0.2.2:9763/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/";
         post = new HttpPost(url);
         post2 = new HttpPost(url);
         final Intent intent = new Intent(context, DisplayResults.class);
@@ -154,7 +165,7 @@ public class MainWindow extends Activity {
 
     }
 
-    public ArrayList<String> getEndLocations(String startLocation) {
+    /*public ArrayList<String> getEndLocations(String startLocation) {
         ArrayList<String> list = new ArrayList<String>();
         //ArrayList<String>list2=new ArrayList<String>();
         ArrayList endLocations = new ArrayList<String>();
@@ -174,6 +185,99 @@ public class MainWindow extends Activity {
                 endLocations.add(allLocations[i]);
             }
         }
+        return endLocations;
+    }*/
+
+    public ArrayList<String> getEndLocations(String startLocation) {
+        ArrayList<String> list = new ArrayList<String>();
+        //ArrayList<String>list2=new ArrayList<String>();
+        ArrayList endLocations = new ArrayList<String>();
+
+        //int index = allBusStops.indexOf(startLocation);
+        //int index1 = root1.indexOf(startLocation);
+        // int index2 = root2.indexOf(startLocation);
+        int index1,index2;
+
+        int index1_1,index2_1;
+        int rootId=0;
+
+        if(root1_25.indexOf(startLocation) != -1 || root2_25.indexOf(startLocation) != -1){
+            rootId = 25;
+            index1 = root1_25.indexOf(startLocation);
+            index2 = root2_25.indexOf(startLocation);
+        }
+        else if(root1_29.indexOf(startLocation) != -1 || root2_29.indexOf(startLocation) != -1){
+            rootId = 29;
+            index1 = root1_29.indexOf(startLocation);
+            index2 = root2_29.indexOf(startLocation);
+        }
+        else{
+            rootId = 38;
+            index1 = root1_38.indexOf(startLocation);
+            index2 = root1_38.indexOf(startLocation);
+        }
+
+        if(index1!=-1){
+            switch(rootId){
+                case 25:
+                    for (int i = index1 + 1; i < root25_1.length; i++) {
+                        endLocations.add(root25_1[i]);
+                    }
+                    break;
+                case 29:
+                    for (int i = index1 + 1; i < root29_1.length; i++) {
+                        endLocations.add(root29_1[i]);
+                    }
+                    break;
+                case 38:
+                    for (int i = index1 + 1; i < root38_1.length; i++) {
+                        endLocations.add(root38_1[i]);
+                    }
+                    break;
+            }
+        }
+
+        if(index2!=-1){
+            switch(rootId){
+                case 25:
+                    for (int i = index2 + 1; i < root25_2.length; i++) {
+                        endLocations.add(root25_2[i]);
+                    }
+                    break;
+                case 29:
+                    for (int i = index2 + 1; i < root29_2.length; i++) {
+                        endLocations.add(root29_2[i]);
+                    }
+                    break;
+                case 38:
+                    for (int i = index2 + 1; i < root38_2.length; i++) {
+                        endLocations.add(root38_2[i]);
+                    }
+                    break;
+            }
+        }
+
+
+        /*if(index2!=-1){
+            for (int i = index2 - 1; i >= 0; i--) {
+                endLocations.add(root_2[i]);
+            }
+        }
+
+        String rootId = rootIds[index];
+        String rootDir = rootDirecion[index];
+
+
+        if (rootDir.equals("1")) {
+            for (int i = index + 1; i < allLocations.length; i++) {
+                endLocations.add(allLocations[i]);
+            }
+        } else {
+
+            for (int i = index - 1; i >= 0; i--) {
+                endLocations.add(allLocations[i]);
+            }
+        }*/
         return endLocations;
     }
 
@@ -213,7 +317,7 @@ public class MainWindow extends Activity {
                         "   <soapenv:Header/>" +
                         "   <soapenv:Body>" +
                         "   <app:putMessage>" +
-                        "  <app:message>minudika</app:message>" +
+                        "  <app:message>"+stringFrom+":"+stringTo+"</app:message>" +
                         "   </app:putMessage>" +
                         "   </soapenv:Body>" +
                         "   </soapenv:Envelope>", "UTF-8");
@@ -260,6 +364,61 @@ public class MainWindow extends Activity {
         }
 
 
+
+    }
+
+    private void setFromResources(){
+        root_1 = getResources().getStringArray(R.array.root_1);
+        root_2 = getResources().getStringArray(R.array.root_2);
+
+        root25_1 = getResources().getStringArray(R.array.root25_1);
+        root25_2 = getResources().getStringArray(R.array.root25_2);
+        root29_1 = getResources().getStringArray(R.array.root29_1);
+        root29_2 = getResources().getStringArray(R.array.root29_2);
+        root38_1 = getResources().getStringArray(R.array.root38_1);
+        root38_2 = getResources().getStringArray(R.array.root38_2);
+
+        allLocations = getResources().getStringArray(R.array.busStopNames);
+        busStopIds = getResources().getStringArray(R.array.busStopIds);
+        rootDirecion = getResources().getStringArray(R.array.rootDirection);
+        rootIds = getResources().getStringArray(R.array.rootIds);
+
+
+        root1 = new ArrayList<String>();
+        root1_25 = new ArrayList<String>();
+        root1_29 = new ArrayList<String>();
+        root1_38 = new ArrayList<String>();
+
+        root2 = new ArrayList<String>();
+        root2_25 = new ArrayList<String>();
+        root2_29 = new ArrayList<String>();
+        root2_38 = new ArrayList<String>();
+
+
+        for(String s:root_1){
+            root1.add(s);
+        }
+        for(String s:root_2){
+            root2.add(s);
+        }
+        for(String s:root25_1){
+            root1_25.add(s);
+        }
+        for(String s:root29_1){
+            root1_29.add(s);
+        }
+        for(String s:root38_1){
+            root1_38.add(s);
+        }
+        for(String s:root25_2){
+            root2_25.add(s);
+        }
+        for(String s:root29_2){
+            root2_29.add(s);
+        }
+        for(String s:root38_2){
+            root2_38.add(s);
+        }
 
     }
 
