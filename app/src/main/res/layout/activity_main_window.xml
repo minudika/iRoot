@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/btnSubmit"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/timePicker"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="From                :"
+        android:text="From          :"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -29,11 +29,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="To                     :"
+        android:text="To               :"
         android:id="@+id/textView2"
         android:textSize="15dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/spinner_from"
-        android:layout_marginTop="20dp"
         android:layout_alignParentStart="true" />
 
     <Spinner
@@ -50,33 +50,32 @@
         android:entries="@array/busStopNames" />
 
     <Spinner
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_to"
+        android:spinnerMode="dropdown"
         android:layout_alignTop="@+id/textView2"
-        android:layout_alignEnd="@+id/spinner_from"
-        android:layout_toEndOf="@+id/textView2"
-        android:spinnerMode="dropdown"/>
+        android:layout_alignStart="@+id/spinner_from"
+        android:layout_alignEnd="@+id/timePicker" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Time           :"
+        android:textSize="15dp"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/spinner_to"
+        android:layout_alignParentStart="true" />
 
     <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/timePicker"
-        android:layout_above="@+id/btnSubmit"
-        android:layout_alignStart="@+id/spinner_to"
-        android:layout_marginBottom="67dp"
         android:timePickerMode="spinner"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
         android:layout_below="@+id/spinner_to"
-        android:layout_alignEnd="@+id/spinner_to"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Time           :"
-        android:id="@+id/textView3"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

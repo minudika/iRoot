@@ -1772,7 +1772,8 @@
         <item>38</item>
         <item>38</item>
     </string-array>
-    <string name="title_activity_display_results">DisplayResults</string>
+
+    <string name="title_activity_display_results">Predicted Results</string>
 
 
 </resources>

@@ -1,13 +1,8 @@
 package wso2.org.iroot;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 public class DisplayResults extends AppCompatActivity {
@@ -23,10 +18,10 @@ public class DisplayResults extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        tView1 = (TextView) findViewById(R.id.textView8);
-        tView2 = (TextView) findViewById(R.id.textView9);
-        tView3 = (TextView) findViewById(R.id.textView10);
-        tView4 = (TextView) findViewById(R.id.textView11);
+        tView1 = (TextView) findViewById(R.id.txtView_from);
+        tView2 = (TextView) findViewById(R.id.txtView_to);
+        tView3 = (TextView) findViewById(R.id.txtView_busNow);
+        tView4 = (TextView) findViewById(R.id.txtView_busOneHr);
 
         Bundle b=getIntent().getExtras();
 

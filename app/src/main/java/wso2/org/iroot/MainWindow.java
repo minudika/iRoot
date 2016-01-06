@@ -81,7 +81,7 @@ public class MainWindow extends Activity {
         spinnerEndLocation = (Spinner) findViewById(R.id.spinner_to);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
         timePicker = (TimePicker) findViewById(R.id.timePicker);
-        timePicker.setIs24HourView(true);
+        //timePicker.setIs24HourView(true);
         root_1 = getResources().getStringArray(R.array.root_1);
         root_2 = getResources().getStringArray(R.array.root_2);
         allLocations = getResources().getStringArray(R.array.busStopNames);
@@ -97,7 +97,8 @@ public class MainWindow extends Activity {
         client = new DefaultHttpClient();
         //String url="https://10.100.4.177:9443/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/";
         //http://10.100.5.59:9783/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/
-        String url = "http://10.0.2.2:9763/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/";
+        //String url = "http://10.0.2.2:9763/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint/";
+        String url = "http://ec2-52-77-236-192.ap-southeast-1.compute.amazonaws.com:9763/services/AndroidAppService.AndroidAppServiceHttpSoap11Endpoint";
         post = new HttpPost(url);
         post2 = new HttpPost(url);
         final Intent intent = new Intent(context, DisplayResults.class);
