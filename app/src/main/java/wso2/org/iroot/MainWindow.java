@@ -142,6 +142,7 @@ public class MainWindow extends Activity {
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                Toast.makeText(getBaseContext(),Integer.toString(hourOfDay),Toast.LENGTH_LONG).show();
                 setup();
             }
         });

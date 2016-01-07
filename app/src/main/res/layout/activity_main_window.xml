@@ -13,10 +13,8 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/btnSubmit"
-        android:layout_below="@+id/timePicker"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#b0bec5"
-        android:background="#b0bec5" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,7 +84,7 @@
         android:timePickerMode="spinner"
         android:scaleX="0.8"
         android:scaleY="0.8"
-        style="@style/MyTimePicker"
+
         android:layout_below="@+id/textView2"
         android:layout_toEndOf="@+id/textView2" />
 
