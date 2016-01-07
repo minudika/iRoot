@@ -14,7 +14,9 @@
         android:text="Submit"
         android:id="@+id/btnSubmit"
         android:layout_below="@+id/timePicker"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#b0bec5"
+        android:background="#b0bec5" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,7 +51,7 @@
         android:layout_alignBaseline="@+id/textView"
         android:layout_alignBottom="@+id/textView"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="8dp"
         android:layout_toEndOf="@+id/textView"
         android:entries="@array/busStopNames" />
 
@@ -58,11 +60,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinner_to"
         android:spinnerMode="dropdown"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignStart="@+id/spinner_from"
-        android:layout_marginBottom="10dp"
         android:textColor="#ffffffff"
-        android:layout_alignEnd="@+id/timePicker" />
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignStart="@+id/spinner_from"
+        android:layout_alignEnd="@+id/spinner_from" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -71,9 +73,11 @@
         android:text="Time           :"
         android:textSize="15dp"
         android:id="@+id/textView3"
-        android:layout_below="@+id/spinner_to"
         android:textColor="#ffffffff"
-        android:layout_alignParentStart="true" />
+        android:autoText="false"
+        android:layout_below="@+id/spinner_to"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" />
 
     <TimePicker
         android:layout_width="wrap_content"
@@ -82,8 +86,8 @@
         android:timePickerMode="spinner"
         android:scaleX="0.8"
         android:scaleY="0.8"
-        android:layout_below="@+id/spinner_to"
-
-        android:layout_alignParentEnd="true" />
+        style="@style/MyTimePicker"
+        android:layout_below="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
 
 </RelativeLayout>

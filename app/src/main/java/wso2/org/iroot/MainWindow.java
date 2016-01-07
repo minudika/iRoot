@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -94,6 +96,7 @@ public class MainWindow extends Activity {
         setFromResources();
         populateAllLocationList();
         populateStartLocaionSpinner(allBusStops);
+        setup();
 
 
         client = new DefaultHttpClient();
@@ -127,8 +130,8 @@ public class MainWindow extends Activity {
                 String startLocation = parent.getItemAtPosition(position).toString();
                 stringFrom = startLocation;
                 populateEndLocaitonSpinner(getEndLocations(startLocation));
-              //  View v = spinnerEndLocation.getSelectedView();
-               // ((TextView) v).setTextColor(-1);
+                View v = spinnerStartLocation.getSelectedView();
+                ((TextView) v).setTextColor(-1);
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
@@ -136,7 +139,65 @@ public class MainWindow extends Activity {
             }
         });
 
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                setup();
+            }
+        });
 
+        timePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setup();
+            }
+        });
+
+
+    }
+
+    public void setup(){
+        Resources system = Resources.getSystem();
+
+        // This is the internal id of the EditText used in NumberPicker (hack)
+        int mNumberPickerInputId =
+                system.getIdentifier("numberpicker_input", "id", "android");
+
+
+
+        final int hourSpinnerId =
+                system.getIdentifier("hour", "id", "android");
+        View hourSpinner = timePicker.findViewById(hourSpinnerId);
+        if (hourSpinner != null) {
+            setNumberPickerTextColor(hourSpinner, Color.WHITE, mNumberPickerInputId);
+           // changeSpinnerTextColor((Spinner) hourSpinner, -1);
+        }
+
+        final int minSpinnerId =
+                system.getIdentifier("minute", "id", "android");
+        View minSpinner = timePicker.findViewById(minSpinnerId);
+        if (minSpinner != null) {
+            setNumberPickerTextColor(minSpinner, Color.WHITE,mNumberPickerInputId);
+            //changeSpinnerTextColor((Spinner)minSpinner,-1);
+        }
+
+        final int amPmSpinnerId =
+                system.getIdentifier("amPm", "id", "android");
+        View amPmSpinner = timePicker.findViewById(amPmSpinnerId);
+        if (amPmSpinner != null) {
+            setNumberPickerTextColor(amPmSpinner, Color.WHITE, mNumberPickerInputId);
+           // changeSpinnerTextColor((Spinner) amPmSpinner, -1);
+        }
+    }
+    private void setNumberPickerTextColor(View spinner, int color,int id) {
+        TextView input = (TextView) spinner.findViewById(id);
+        //TextView input = (TextView) ((Spinner)spinner).getSelectedView();
+        input.setTextColor(color);
+    }
+
+    private void changeSpinnerTextColor(Spinner spinner,int color){
+        View v = spinner.getSelectedView();
+        ((TextView) v).setTextColor(color);
     }
 
     public void populateEndLocaitonSpinner(ArrayList<String> arrayList) {
@@ -149,8 +210,8 @@ public class MainWindow extends Activity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
                 String endLocation = parent.getItemAtPosition(position).toString();
                 stringTo = endLocation;
-               // View v= spinnerEndLocation.getSelectedView();
-                //((TextView)v).setTextColor(-1);
+                View v= spinnerEndLocation.getSelectedView();
+                ((TextView)v).setTextColor(-1);
 
             }
 
