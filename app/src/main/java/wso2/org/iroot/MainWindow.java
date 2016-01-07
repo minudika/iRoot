@@ -2,7 +2,9 @@ package wso2.org.iroot;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -32,8 +35,10 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.xml.transform.Result;
@@ -44,7 +49,7 @@ import wso2.org.utils.XMLParser;
 public class MainWindow extends Activity {
     Spinner spinnerStartLocation;
     Spinner spinnerEndLocation;
-    Button btnSubmit;
+    Button btnSubmit,btnPickTime;
     TimePicker timePicker;
     Context context = this;
     String[] root_1;
@@ -56,6 +61,7 @@ public class MainWindow extends Activity {
     String[] rootIds;
     String[] results;
     ArrayList<String> allBusStops;
+    Calendar calendar;
 
     ArrayList<String> root1;
     ArrayList<String> root2;
@@ -67,6 +73,8 @@ public class MainWindow extends Activity {
     ArrayList<String> root2_38;
     String stringFrom,stringTo;
     XMLParser xmlParser;
+
+    TextView txtViewDisplayTime;
 
 
     HttpClient client;
@@ -84,7 +92,9 @@ public class MainWindow extends Activity {
         spinnerStartLocation = (Spinner) findViewById(R.id.spinner_from);
         spinnerEndLocation = (Spinner) findViewById(R.id.spinner_to);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        btnPickTime = (Button) findViewById(R.id.btnPickTime);
         timePicker = (TimePicker) findViewById(R.id.timePicker);
+        txtViewDisplayTime = (TextView) findViewById(R.id.txtView_displayTime);
         //timePicker.setIs24HourView(true);
         root_1 = getResources().getStringArray(R.array.root_1);
         root_2 = getResources().getStringArray(R.array.root_2);
@@ -93,9 +103,13 @@ public class MainWindow extends Activity {
         rootDirecion = getResources().getStringArray(R.array.rootDirection);
         rootIds = getResources().getStringArray(R.array.rootIds);
 
+        calendar=Calendar.getInstance();
         setFromResources();
         populateAllLocationList();
         populateStartLocaionSpinner(allBusStops);
+        int hour=calendar.get(Calendar.HOUR_OF_DAY);
+        int minute=calendar.get(Calendar.MINUTE);
+        setTime(hour,minute);
         setup();
 
 
@@ -142,7 +156,7 @@ public class MainWindow extends Activity {
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                Toast.makeText(getBaseContext(),Integer.toString(hourOfDay),Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), Integer.toString(hourOfDay), Toast.LENGTH_LONG).show();
                 setup();
             }
         });
@@ -155,6 +169,53 @@ public class MainWindow extends Activity {
         });
 
 
+        btnPickTime.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                //To show current date in the datepicker
+
+                int hour=calendar.get(Calendar.HOUR_OF_DAY);
+                int minute=calendar.get(Calendar.MINUTE);
+
+                TimePickerDialog mTimePicker;
+                mTimePicker = new TimePickerDialog(context,TimePickerDialog.THEME_HOLO_DARK, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        setTime(hourOfDay,minute);
+
+                    }
+                },hour,minute,false);
+
+                mTimePicker.setTitle("Select Time");
+
+                mTimePicker.show();
+            }
+        });
+
+
+    }
+
+    private void setTime(int hourOfDay,int minute){
+        String h="";
+        String m="";
+        String amPm="";
+        if(hourOfDay <12){
+            h=Integer.toString(hourOfDay);
+            m=Integer.toString(minute);
+            h=(h.length()<2)?"0"+h :h;
+            m=(m.length()<2)?"0"+m :m;
+            amPm="AM";
+        }
+        else{
+            h=Integer.toString(hourOfDay-12);
+            m=Integer.toString(minute-12);
+            h=(h.length()<2)?"0"+h :h;
+            m=(m.length()<2)?"0"+m :m;
+            amPm="PM";
+        }
+        txtViewDisplayTime.setText("  "+h+":"+m+" "+amPm);
     }
 
     public void setup(){

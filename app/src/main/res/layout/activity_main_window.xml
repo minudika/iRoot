@@ -6,7 +6,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
 
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainWindow"
-    android:background="@drawable/bg10">
+    android:background="@drawable/bg8_3">
 
     <Button
         android:layout_width="wrap_content"
@@ -89,6 +89,28 @@
         android:scaleY="0.8"
 
         android:layout_below="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+        android:layout_toEndOf="@+id/textView2"
+        android:visibility="gone" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPickTime"
+        android:background="@drawable/abc_ic_go_search_api_mtrl_alpha"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/txtView_displayTime"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3" />
 
 </RelativeLayout>
