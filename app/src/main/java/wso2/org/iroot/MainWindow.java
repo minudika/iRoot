@@ -13,7 +13,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -125,12 +127,16 @@ public class MainWindow extends Activity {
                 String startLocation = parent.getItemAtPosition(position).toString();
                 stringFrom = startLocation;
                 populateEndLocaitonSpinner(getEndLocations(startLocation));
+              //  View v = spinnerEndLocation.getSelectedView();
+               // ((TextView) v).setTextColor(-1);
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
                 // TODO Auto-generated method stub
             }
         });
+
+
     }
 
     public void populateEndLocaitonSpinner(ArrayList<String> arrayList) {
@@ -143,6 +149,8 @@ public class MainWindow extends Activity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
                 String endLocation = parent.getItemAtPosition(position).toString();
                 stringTo = endLocation;
+               // View v= spinnerEndLocation.getSelectedView();
+                //((TextView)v).setTextColor(-1);
 
             }
 
@@ -364,6 +372,8 @@ public class MainWindow extends Activity {
         protected void onPostExecute(String[] result) {
             Intent i=new Intent(context,DisplayResults.class);
             Bundle bundle = new Bundle();
+            bundle.putString("from",stringFrom);
+            bundle.putString("to",stringTo);
             bundle.putStringArray("results",result);
             i.putExtras(bundle);
             startActivity(i);

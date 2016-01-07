@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class DisplayResults extends AppCompatActivity {
 
-    TextView tView1,tView2,tView3,tView4,txtViewByBus_now,txtViewByBus_inOneHr,txtViewByBus_usually,txtViewByBike,txtViewByFoot;
+    TextView tView_from,tView_to,tView3,tView4,txtViewByBus_now,txtViewByBus_inOneHr,txtViewByBus_usually,txtViewByBike,txtViewByFoot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +18,8 @@ public class DisplayResults extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        tView1 = (TextView) findViewById(R.id.txtView_from);
-        tView2 = (TextView) findViewById(R.id.txtView_to);
+        tView_from = (TextView) findViewById(R.id.txtView_from);
+        tView_to = (TextView) findViewById(R.id.txtView_to);
         tView3 = (TextView) findViewById(R.id.txtView_busNow);
         tView4 = (TextView) findViewById(R.id.txtView_busOneHr);
 
@@ -33,15 +33,17 @@ public class DisplayResults extends AppCompatActivity {
         Bundle b=getIntent().getExtras();
 
         String[] results=b.getStringArray("results");
+        String stringFrom = b.getString("from");
+        String stringTo = b.getString("to");
 
-        //tView1.setText(results[0]);
-        //tView2.setText(results[1]);
+        tView_from.setText(stringFrom);
+        tView_to.setText(stringTo);
        // tView3.setText(results[2]);
-        txtViewByBus_now.setText(results[0]);
-        txtViewByBus_inOneHr.setText(results[1]);
-        txtViewByBus_usually.setText(results[2]);
-        txtViewByBike.setText(results[3]);
-        txtViewByFoot.setText(results[4]);
+        txtViewByBus_now.setText(results[0]+" minutes");
+        txtViewByBus_inOneHr.setText(results[1]+" minutes");
+        txtViewByBus_usually.setText(results[2]+" minutes");
+        txtViewByBike.setText(results[3]+" minutes");
+        txtViewByFoot.setText(results[4]+" minutes");
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
