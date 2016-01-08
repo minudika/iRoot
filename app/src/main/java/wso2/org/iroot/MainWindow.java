@@ -2,10 +2,12 @@ package wso2.org.iroot;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -66,6 +68,7 @@ public class MainWindow extends Activity {
     String[] rootDirecion;
     String[] rootIds;
     String[] results;
+    String currentTime;
     ArrayList<String> allBusStops;
     Calendar calendar;
 
@@ -95,19 +98,12 @@ public class MainWindow extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_window);
 
-       /* spinnerStartLocation = (Spinner) findViewById(R.id.spinner_from);
-        spinnerEndLocation = (Spinner) findViewById(R.id.spinner_to);*/
-       /* btnSubmit = (Button) findViewById(R.id.btnSubmit);
-        btnPickTime = (Button) findViewById(R.id.btnPickTime);
-        timePicker = (TimePicker) findViewById(R.id.timePicker);
-        txtViewDisplayTime = (TextView) findViewById(R.id.txtView_displayTime);
-        autoCompleteTextView_to=(AutoCompleteTextView)findViewById(R.id.autoCompleteTextView_to);*/
         autoCompleteTextView_from=(AutoCompleteTextView)findViewById(R.id.autoCompleteTextView_from);
         spinner = (Spinner) findViewById(R.id.spinner);
         btnPickTime=(Button)findViewById(R.id.btnPickTime);
         txtViewDisplayTime = (TextView)findViewById(R.id.textView_displayTime);
         btnSubmit = (Button) findViewById(R.id.button_submit);
-        //timePicker.setIs24HourView(true);
+
         root_1 = getResources().getStringArray(R.array.root_1);
         root_2 = getResources().getStringArray(R.array.root_2);
         allLocations = getResources().getStringArray(R.array.busStopNames);
@@ -118,11 +114,12 @@ public class MainWindow extends Activity {
         calendar=Calendar.getInstance();
         setFromResources();
         populateAllLocationList();
-        //populateStartLocaionSpinner(allBusStops);
+
         int hour=calendar.get(Calendar.HOUR_OF_DAY);
         int minute=calendar.get(Calendar.MINUTE);
-        setTime(hour,minute);
-        //setup();
+        currentTime = setTime(hour,minute);
+
+
 
 
         client = new DefaultHttpClient();
@@ -133,8 +130,8 @@ public class MainWindow extends Activity {
         String url2 ="http://ec2-52-77-236-192.ap-southeast-1.compute.amazonaws.com:9763/endpoints/MobileRequestReceiver";
         post = new HttpPost(url2);
         post2 = new HttpPost(url);
-        final Intent intent = new Intent(context, DisplayResults.class);
-       // autoCompleteTextView_to.setEnabled(false);
+
+
         spinner.setEnabled(false);
 
         // Get a reference to the AutoCompleteTextView in the layout
@@ -147,20 +144,6 @@ public class MainWindow extends Activity {
         autoCompleteTextView_from.setAdapter(adapter_from);
 
 
-        autoCompleteTextView_from.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    // performSearch();
-                    if (validateStartLocations(stringFrom)) {
-
-                    }
-                    return true;
-                }
-                return false;
-            }
-        });
 
         autoCompleteTextView_from.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -192,46 +175,9 @@ public class MainWindow extends Activity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // populateSpinner();
-                //pickTime();
-                //startActivity(new Intent(context,MainWindow.class));
-                new login().execute("");
-
-                /*Bundle bundle = new Bundle();
-                bundle.putStringArray("array", results);
-                intent.putExtras(bundle);
-                startActivity(intent);*/
+                new Task().execute("");
             }
         });
-
-       /* spinnerStartLocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
-                String startLocation = parent.getItemAtPosition(position).toString();
-                stringFrom = startLocation;
-                populateEndLocaitonSpinner(getEndLocations(startLocation));
-                View v = spinnerStartLocation.getSelectedView();
-                ((TextView) v).setTextColor(-1);
-            }
-
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-            }
-        });
-
-        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                //Toast.makeText(getBaseContext(), Integer.toString(hourOfDay), Toast.LENGTH_LONG).show();
-                setup();
-            }
-        });
-
-        timePicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setup();
-            }
-        });*/
 
 
         btnPickTime.setOnClickListener(new View.OnClickListener() {
@@ -248,7 +194,7 @@ public class MainWindow extends Activity {
                 mTimePicker = new TimePickerDialog(context,TimePickerDialog.THEME_HOLO_DARK, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        setTime(hourOfDay,minute);
+                        currentTime = setTime(hourOfDay,minute);
 
                     }
                 },hour,minute,false);
@@ -262,22 +208,12 @@ public class MainWindow extends Activity {
 
     }
 
-    private boolean validateStartLocations(String s){
-        if(root1.indexOf(s) == -1 && root2.indexOf(s) == -1){
-            return false;
-        }
-        return true;
-    }
-
-    private boolean validateEndLocations(String s,ArrayList arrayList){
-        if(arrayList.indexOf(s)==-1){
-            return false;
-        }
-        return true;
-    }
 
 
-    private void setTime(int hourOfDay,int minute){
+
+
+
+    private String setTime(int hourOfDay,int minute){
         String h="";
         String m="";
         String amPm="";
@@ -296,128 +232,43 @@ public class MainWindow extends Activity {
             amPm="PM";
         }
         txtViewDisplayTime.setText("  "+h+":"+m+" "+amPm);
+        return (h+":"+m+" "+amPm);
     }
 
-    public void setup(){
-        Resources system = Resources.getSystem();
 
-        // This is the internal id of the EditText used in NumberPicker (hack)
-        int mNumberPickerInputId =
-                system.getIdentifier("numberpicker_input", "id", "android");
-
-
-
-        final int hourSpinnerId =
-                system.getIdentifier("hour", "id", "android");
-        View hourSpinner = timePicker.findViewById(hourSpinnerId);
-        if (hourSpinner != null) {
-            setNumberPickerTextColor(hourSpinner, Color.WHITE, mNumberPickerInputId);
-           // changeSpinnerTextColor((Spinner) hourSpinner, -1);
-        }
-
-        final int minSpinnerId =
-                system.getIdentifier("minute", "id", "android");
-        View minSpinner = timePicker.findViewById(minSpinnerId);
-        if (minSpinner != null) {
-            setNumberPickerTextColor(minSpinner, Color.WHITE,mNumberPickerInputId);
-            //changeSpinnerTextColor((Spinner)minSpinner,-1);
-        }
-
-        final int amPmSpinnerId =
-                system.getIdentifier("amPm", "id", "android");
-        View amPmSpinner = timePicker.findViewById(amPmSpinnerId);
-        if (amPmSpinner != null) {
-            setNumberPickerTextColor(amPmSpinner, Color.WHITE, mNumberPickerInputId);
-           // changeSpinnerTextColor((Spinner) amPmSpinner, -1);
-        }
-    }
-    private void setNumberPickerTextColor(View spinner, int color,int id) {
-        TextView input = (TextView) spinner.findViewById(id);
-        //TextView input = (TextView) ((Spinner)spinner).getSelectedView();
-        input.setTextColor(color);
-    }
-
-    private void changeSpinnerTextColor(Spinner spinner,int color){
-        View v = spinner.getSelectedView();
-        ((TextView) v).setTextColor(color);
-    }
 
     private void populateDestinationList(){
-        ArrayAdapter<String> adp = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, getEndLocations(stringFrom));
 
-        spinner.setEnabled(true);
-        spinner.setAdapter(adp);
-    }
-    public void populateEndLocaitonSpinner(ArrayList<String> arrayList) {
-
-        ArrayAdapter<String> adp = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, arrayList);
-        // APP CURRENTLY CRASHING HERE
-        spinnerEndLocation.setAdapter(adp);
-        //Set listener Called when the item is selected in spinner
-        spinnerEndLocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
-                String endLocation = parent.getItemAtPosition(position).toString();
-                stringTo = endLocation;
-                View v= spinnerEndLocation.getSelectedView();
-                ((TextView)v).setTextColor(-1);
-
-            }
-
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-            }
-        });
-    }
-
-    public void populateStartLocaionSpinner(ArrayList<String> arrayList) {
-        ArrayAdapter<String> adp = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, arrayList);
-        // APP CURRENTLY CRASHING HERE
-        spinnerEndLocation.setAdapter(adp);
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    public void pickTime() {
-        long time = timePicker.getDrawingTime();
-        int hour = timePicker.getCurrentHour();
-        int minutes = timePicker.getCurrentMinute();
-        Toast.makeText(getApplicationContext(), Integer.toString(hour) + " : " + Integer.toString(minutes), Toast.LENGTH_LONG).show();
-
-    }
-
-    /*public ArrayList<String> getEndLocations(String startLocation) {
-        ArrayList<String> list = new ArrayList<String>();
-        //ArrayList<String>list2=new ArrayList<String>();
-        ArrayList endLocations = new ArrayList<String>();
-
-        int index = allBusStops.indexOf(startLocation);
-        String rootId = rootIds[index];
-        String rootDir = rootDirecion[index];
-
-
-        if (rootDir.equals("1")) {
-            for (int i = index + 1; i < allLocations.length; i++) {
-                endLocations.add(allLocations[i]);
-            }
-        } else {
-
-            for (int i = index - 1; i >= 0; i--) {
-                endLocations.add(allLocations[i]);
-            }
+        List list = getEndLocations(stringFrom);
+        if(list.size() != 0) {
+            ArrayAdapter<String> adp = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, getEndLocations(stringFrom));
+            spinner.setEnabled(true);
+            spinner.setAdapter(adp);
         }
-        return endLocations;
-    }*/
+        else{
+            new AlertDialog.Builder(context)
+                    .setMessage("No more bus stops on the route!")
+                    .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            autoCompleteTextView_from.setText("");
+                            autoCompleteTextView_to.setEnabled(false);
+                            dialog.dismiss();
+                        }
+                    }).create().show();
+        }
+    }
+
+
 
     public ArrayList<String> getEndLocations(String startLocation) {
-        ArrayList<String> list = new ArrayList<String>();
-        //ArrayList<String>list2=new ArrayList<String>();
+
         ArrayList endLocations = new ArrayList<String>();
 
-        //int index = allBusStops.indexOf(startLocation);
-        //int index1 = root1.indexOf(startLocation);
-        // int index2 = root2.indexOf(startLocation);
+
         int index1,index2;
 
-        int index1_1,index2_1;
         int rootId=0;
 
         if(root1_25.indexOf(startLocation) != -1 || root2_25.indexOf(startLocation) != -1){
@@ -476,27 +327,6 @@ public class MainWindow extends Activity {
             }
         }
 
-
-        /*if(index2!=-1){
-            for (int i = index2 - 1; i >= 0; i--) {
-                endLocations.add(root_2[i]);
-            }
-        }
-
-        String rootId = rootIds[index];
-        String rootDir = rootDirecion[index];
-
-
-        if (rootDir.equals("1")) {
-            for (int i = index + 1; i < allLocations.length; i++) {
-                endLocations.add(allLocations[i]);
-            }
-        } else {
-
-            for (int i = index - 1; i >= 0; i--) {
-                endLocations.add(allLocations[i]);
-            }
-        }*/
         return endLocations;
     }
 
@@ -507,7 +337,7 @@ public class MainWindow extends Activity {
         }
     }
 
-    private class login extends AsyncTask<String, Void, String[]> {
+    private class Task extends AsyncTask<String, Void, String[]> {
 
         ProgressDialog dialog = ProgressDialog.show(context, "", "Retrieving results, Please wait...");
 
@@ -516,12 +346,6 @@ public class MainWindow extends Activity {
             Log.i("thread", "Doing Something...");
 
             try {
-
-                List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-
-                pairs.add(new BasicNameValuePair("from", stringFrom));
-                pairs.add(new BasicNameValuePair("to", stringTo));
-
                 post.setHeader("Accept-Encoding", "gzip,deflate");
                 post.setHeader("Content-Type", "text/xml;charset=UTF-8");
                 post.setHeader("SOAPAction", "urn:putMessage");
@@ -539,7 +363,7 @@ public class MainWindow extends Activity {
                         "  <app:message>" +
                         " <from>"+stringFrom+"</from>"+
                         " <to>"+stringTo+"</to>"+
-                        " <time>12</time>"+
+                        " <time>"+currentTime+"</time>"+
                         "</app:message>" +
                         "   </app:putMessage>" +
                         "   </soapenv:Body>" +

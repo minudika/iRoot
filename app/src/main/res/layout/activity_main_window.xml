@@ -8,118 +8,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainWindow"
     android:background="@drawable/bg8_3">
 
-   <!-- <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/btnSubmit"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/spinner_to"
-        android:layout_alignStart="@+id/textView"
-        android:visibility="gone" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="From      :"
-        android:id="@+id/textView"
-        android:textSize="18dp"
-        android:layout_marginTop="91dp"
-        android:layout_alignParentTop="true"
-        android:textColor="#ffffff"
-        android:layout_alignEnd="@+id/textView3"
-        android:layout_alignParentStart="true"
-        android:visibility="gone" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="To           :"
-        android:id="@+id/textView2"
-        android:textSize="18dp"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/spinner_from"
-        android:textColor="#ffffff"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/textView3"
-        android:visibility="gone" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:id="@+id/spinner_from"
-        android:spinnerMode="dropdown"
-        android:textColor="#ffffff"
-        android:layout_alignBaseline="@+id/textView"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="8dp"
-        android:layout_toEndOf="@+id/textView"
-        android:entries="@array/busStopNames"
-        android:visibility="gone" />-->
-
-   <!-- <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner_to"
-        android:spinnerMode="dropdown"
-        android:textColor="#ffffff"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignStart="@+id/spinner_from"
-        android:layout_alignEnd="@+id/spinner_from"
-        android:visibility="gone" />-->
-
-   <!-- <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Time      : "
-        android:textSize="18dp"
-        android:id="@+id/textView3"
-        android:textColor="#ffffff"
-        android:autoText="false"
-        android:layout_below="@+id/spinner_to"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp"
-        android:visibility="gone" />
-
-    <TimePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timePicker"
-        android:timePickerMode="spinner"
-        android:scaleX="0.8"
-        android:scaleY="0.8"
-
-        android:layout_below="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:visibility="gone" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnPickTime"
-        android:background="@drawable/abc_ic_go_search_api_mtrl_alpha"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/textView3"
-        android:visibility="gone" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/txtView_displayTime"
-        android:textColor="#ffffff"
-        android:textSize="18dp"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3"
-        android:visibility="gone" />-->
 
     <LinearLayout
         android:orientation="vertical"
@@ -163,6 +52,7 @@
                 style="@style/LinearLayout"
                 android:id="@+id/autoCompleteTextView_from"
                 android:hint="Enter start location.."
+                android:textColorHint="#616161"
                 android:layout_marginLeft="10dp"
                 android:imeOptions="actionSearch"
                 android:layout_weight="1" />
@@ -186,16 +76,6 @@
 
                 style="@style/LinearLayout"
                 android:id="@+id/textView10" />
-
-            <!--<AutoCompleteTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:hint="Enter destination.."
-                android:id="@+id/autoCompleteTextView_to"
-                android:layout_weight="1" />-->
-
-
 
             <Spinner
                 android:layout_width="280dp"
