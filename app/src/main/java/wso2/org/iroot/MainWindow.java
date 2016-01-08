@@ -13,9 +13,12 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -49,8 +52,11 @@ import wso2.org.utils.XMLParser;
 public class MainWindow extends Activity {
     Spinner spinnerStartLocation;
     Spinner spinnerEndLocation;
+    Spinner spinner;
     Button btnSubmit,btnPickTime;
     TimePicker timePicker;
+    AutoCompleteTextView autoCompleteTextView_from,autoCompleteTextView_to;
+    TextView txtViewDisplayTime;
     Context context = this;
     String[] root_1;
     String[] root_2;
@@ -74,7 +80,7 @@ public class MainWindow extends Activity {
     String stringFrom,stringTo;
     XMLParser xmlParser;
 
-    TextView txtViewDisplayTime;
+
 
 
     HttpClient client;
@@ -89,12 +95,18 @@ public class MainWindow extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_window);
 
-        spinnerStartLocation = (Spinner) findViewById(R.id.spinner_from);
-        spinnerEndLocation = (Spinner) findViewById(R.id.spinner_to);
-        btnSubmit = (Button) findViewById(R.id.btnSubmit);
+       /* spinnerStartLocation = (Spinner) findViewById(R.id.spinner_from);
+        spinnerEndLocation = (Spinner) findViewById(R.id.spinner_to);*/
+       /* btnSubmit = (Button) findViewById(R.id.btnSubmit);
         btnPickTime = (Button) findViewById(R.id.btnPickTime);
         timePicker = (TimePicker) findViewById(R.id.timePicker);
         txtViewDisplayTime = (TextView) findViewById(R.id.txtView_displayTime);
+        autoCompleteTextView_to=(AutoCompleteTextView)findViewById(R.id.autoCompleteTextView_to);*/
+        autoCompleteTextView_from=(AutoCompleteTextView)findViewById(R.id.autoCompleteTextView_from);
+        spinner = (Spinner) findViewById(R.id.spinner);
+        btnPickTime=(Button)findViewById(R.id.btnPickTime);
+        txtViewDisplayTime = (TextView)findViewById(R.id.textView_displayTime);
+        btnSubmit = (Button) findViewById(R.id.button_submit);
         //timePicker.setIs24HourView(true);
         root_1 = getResources().getStringArray(R.array.root_1);
         root_2 = getResources().getStringArray(R.array.root_2);
@@ -106,11 +118,11 @@ public class MainWindow extends Activity {
         calendar=Calendar.getInstance();
         setFromResources();
         populateAllLocationList();
-        populateStartLocaionSpinner(allBusStops);
+        //populateStartLocaionSpinner(allBusStops);
         int hour=calendar.get(Calendar.HOUR_OF_DAY);
         int minute=calendar.get(Calendar.MINUTE);
         setTime(hour,minute);
-        setup();
+        //setup();
 
 
         client = new DefaultHttpClient();
@@ -122,6 +134,59 @@ public class MainWindow extends Activity {
         post = new HttpPost(url2);
         post2 = new HttpPost(url);
         final Intent intent = new Intent(context, DisplayResults.class);
+       // autoCompleteTextView_to.setEnabled(false);
+        spinner.setEnabled(false);
+
+        // Get a reference to the AutoCompleteTextView in the layout
+
+         // Get the string array
+        String[] allLocations = getResources().getStringArray(R.array.busStopNames);
+        // Create the adapter and set it to the AutoCompleteTextView
+        ArrayAdapter<String> adapter_from =
+                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, allLocations);
+        autoCompleteTextView_from.setAdapter(adapter_from);
+
+
+        autoCompleteTextView_from.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    // performSearch();
+                    if (validateStartLocations(stringFrom)) {
+
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        autoCompleteTextView_from.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(getBaseContext(),"done",Toast.LENGTH_LONG).show();
+                stringFrom = autoCompleteTextView_from.getText().toString();
+                populateDestinationList();
+
+            }
+        });
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                stringTo = spinner.getItemAtPosition(position).toString();
+                View v = spinner.getSelectedView();
+                ((TextView) v).setTextColor(-1);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
@@ -139,7 +204,7 @@ public class MainWindow extends Activity {
             }
         });
 
-        spinnerStartLocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+       /* spinnerStartLocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
                 String startLocation = parent.getItemAtPosition(position).toString();
                 stringFrom = startLocation;
@@ -156,7 +221,7 @@ public class MainWindow extends Activity {
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                Toast.makeText(getBaseContext(), Integer.toString(hourOfDay), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(), Integer.toString(hourOfDay), Toast.LENGTH_LONG).show();
                 setup();
             }
         });
@@ -166,7 +231,7 @@ public class MainWindow extends Activity {
             public void onClick(View v) {
                 setup();
             }
-        });
+        });*/
 
 
         btnPickTime.setOnClickListener(new View.OnClickListener() {
@@ -197,6 +262,21 @@ public class MainWindow extends Activity {
 
     }
 
+    private boolean validateStartLocations(String s){
+        if(root1.indexOf(s) == -1 && root2.indexOf(s) == -1){
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateEndLocations(String s,ArrayList arrayList){
+        if(arrayList.indexOf(s)==-1){
+            return false;
+        }
+        return true;
+    }
+
+
     private void setTime(int hourOfDay,int minute){
         String h="";
         String m="";
@@ -210,7 +290,7 @@ public class MainWindow extends Activity {
         }
         else{
             h=Integer.toString(hourOfDay-12);
-            m=Integer.toString(minute-12);
+            m=Integer.toString(minute);
             h=(h.length()<2)?"0"+h :h;
             m=(m.length()<2)?"0"+m :m;
             amPm="PM";
@@ -262,6 +342,12 @@ public class MainWindow extends Activity {
         ((TextView) v).setTextColor(color);
     }
 
+    private void populateDestinationList(){
+        ArrayAdapter<String> adp = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, getEndLocations(stringFrom));
+
+        spinner.setEnabled(true);
+        spinner.setAdapter(adp);
+    }
     public void populateEndLocaitonSpinner(ArrayList<String> arrayList) {
 
         ArrayAdapter<String> adp = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, arrayList);
