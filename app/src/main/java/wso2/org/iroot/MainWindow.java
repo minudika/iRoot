@@ -1,52 +1,35 @@
 package wso2.org.iroot;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import javax.xml.transform.Result;
 
 import wso2.org.utils.XMLParser;
 
@@ -150,6 +133,7 @@ public class MainWindow extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(getBaseContext(),"done",Toast.LENGTH_LONG).show();
                 stringFrom = autoCompleteTextView_from.getText().toString();
+                btnSubmit.setEnabled(false);
                 populateDestinationList();
 
             }
@@ -237,13 +221,15 @@ public class MainWindow extends Activity {
 
 
 
-    private void populateDestinationList(){
+    private boolean populateDestinationList(){
 
         List list = getEndLocations(stringFrom);
         if(list.size() != 0) {
             ArrayAdapter<String> adp = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, getEndLocations(stringFrom));
             spinner.setEnabled(true);
+            btnSubmit.setEnabled(true);
             spinner.setAdapter(adp);
+            return true;
         }
         else{
             new AlertDialog.Builder(context)
@@ -252,11 +238,13 @@ public class MainWindow extends Activity {
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            autoCompleteTextView_from.setText("");
-                            autoCompleteTextView_to.setEnabled(false);
                             dialog.dismiss();
                         }
                     }).create().show();
+            spinner.setEnabled(false);
+            autoCompleteTextView_from.setText("");
+            btnSubmit.setEnabled(false);
+            return false;
         }
     }
 
