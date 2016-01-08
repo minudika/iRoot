@@ -22,7 +22,7 @@
         <item>Water Lane</item>
         <item>Stratford Centre West</item>
         <item>Old Town Hall</item>
-        <item>Stratford High St / Carpenters Road</item>
+        <item>Stratford High St \/ Carpenters Road</item>
         <item>Warton Road</item>
         <item>Abbey Lane</item>
         <item>Bow Church South</item>
@@ -38,13 +38,13 @@
         <item>Booth Memorial</item>
         <item>Sidney Street</item>
         <item>Whitechapel Station</item>
-        <item>Whitechapel Station  / Royal London Hosp</item>
+        <item>Whitechapel Station  \/ Royal London Hosp</item>
         <item>The East London Mosque</item>
         <item>Adler Street West</item>
         <item>Aldgate East</item>
         <item>Aldgate</item>
         <item>Bank Station</item>
-        <item>Poultry / Bank Station</item>
+        <item>Poultry \/ Bank Station</item>
         <item>Bread Street</item>
         <item>St Paul\'s Station</item>
         <item>City Thameslink</item>
@@ -53,9 +53,9 @@
         <item>Chancery Lane</item>
         <item>Brownlow Street West</item>
         <item>Holborn Station</item>
-        <item>New Oxford Street / High Holborn</item>
+        <item>New Oxford Street \/ High Holborn</item>
         <item>Tottenham Court Road</item>
-        <item>Oxford Street / Soho Street</item>
+        <item>Oxford Street \/ Soho Street</item>
         <item>Wardour Street</item>
         <item>Great Titchfield St</item>
         <item>Holles Street West</item>
@@ -63,19 +63,19 @@
 
     <string-array name="root25_2">
         <item>Holles Street</item>
-        <item>Great Titchfield St / Oxford Circus Stn</item>
+        <item>Great Titchfield St \/ Oxford Circus Stn</item>
         <item>Tottenham Court Road East</item>
         <item>New Oxford Street</item>
         <item>Procter Street</item>
         <item>Brownlow Street</item>
         <item>Chancery Lane Station</item>
-        <item>Holborn Circus / Fetter Lane</item>
+        <item>Holborn Circus \/ Fetter Lane</item>
         <item>Holborn Circus</item>
         <item>City Thameslink Station</item>
         <item>King Edward Street</item>
         <item>St Paul\'s Station Road</item>
-        <item>Bank Station  / Poultry</item>
-        <item>Bank Station  / Cornhill</item>
+        <item>Bank Station  \/ Poultry</item>
+        <item>Bank Station  \/ Cornhill</item>
         <item>Bishopsgate</item>
         <item>St Mary Axe</item>
         <item>St Katharine Cree</item>
@@ -83,12 +83,12 @@
         <item>Aldgate East Station</item>
         <item>Adler Street</item>
         <item>The East London Mosque Street</item>
-        <item>Royal London Hospital / Whitechapel Stn</item>
+        <item>Royal London Hospital \/ Whitechapel Stn</item>
         <item>Booth Memorial West</item>
         <item>Stepney Green East</item>
         <item>Stepney Green East Station</item>
-        <item>Bancroft Road / Ocean Estate</item>
-        <item>Queen Mary / University Of London</item>
+        <item>Bancroft Road \/ Ocean Estate</item>
+        <item>Queen Mary \/ University Of London</item>
         <item>Regents Canal</item>
         <item>Mile End Station</item>
         <item>Coborn Road South</item>
@@ -96,12 +96,12 @@
         <item>Bow Church West Station</item>
         <item>Bow Church</item>
         <item>Warton Road East</item>
-        <item>Stratford High St Stn  / Carpenters Road</item>
+        <item>Stratford High St Stn  \/ Carpenters Road</item>
         <item>Stratford Bus</item>
         <item>Stratford Bus Station</item>
         <item>Stratford Centre</item>
         <item>Litchfield Avenue</item>
-        <item>Water Lane / University Of East London</item>
+        <item>Water Lane \/ University Of East London</item>
         <item>Atherton Leisure Centre West</item>
         <item>Margery Park Road</item>
         <item>Woodgrange Road</item>
@@ -136,14 +136,14 @@
         <item>Manor House Station</item>
         <item>Portland Rise</item>
         <item>Alexandra Grove</item>
-        <item>Finsbury Park / Blackstock Road</item>
+        <item>Finsbury Park \/ Blackstock Road</item>
         <item>Finsbury Park Station</item>
         <item>Isledon Road</item>
         <item>Berriman Road</item>
         <item>Sobell Centre</item>
         <item>Holloway Road</item>
         <item>Caledonian Road</item>
-        <item>Hillmarton Road / H M Prison Holloway</item>
+        <item>Hillmarton Road \/ H M Prison Holloway</item>
         <item>Hilldrop Road</item>
         <item>Brecknock Road</item>
         <item>Camden Park Road</item>
@@ -155,8 +155,8 @@
         <item>Mornington Crescent</item>
         <item>Silverdale East</item>
         <item>Robert Street</item>
-        <item>Warren Street Station  / Euston Road</item>
-        <item>Gower Street / University College Hosp</item>
+        <item>Warren Street Station  \/ Euston Road</item>
+        <item>Gower Street \/ University College Hosp</item>
         <item>Torrington Place</item>
         <item>Chenies Street</item>
         <item>Great Russell Street</item>
@@ -164,7 +164,7 @@
         <item>Cambridge Circus North</item>
         <item>Leicester Square</item>
         <item>St Martin\'s Place</item>
-        <item>Trafalgar Square / Charing Cross Stn</item>
+        <item>Trafalgar Square \/ Charing Cross Stn</item>
     </string-array>
 
     <string-array name="root29_2">
@@ -176,13 +176,13 @@
         <item>Percy Street</item>
         <item>Goodge Street Station</item>
         <item>Warren Street Station</item>
-        <item>Hampstead Road / Drummond Street</item>
+        <item>Hampstead Road \/ Drummond Street</item>
         <item>Robert Street South</item>
         <item>Silverdale</item>
         <item>Mornington Crescent Station</item>
         <item>Camden High Street</item>
         <item>Camden Town Station</item>
-        <item>Camden Town / Camden Road</item>
+        <item>Camden Town \/ Camden Road</item>
         <item>Camden Road Station</item>
         <item>St Pancras Way</item>
         <item>Murray Street West</item>
@@ -192,15 +192,15 @@
         <item>Hilldrop Road East</item>
         <item>H M Prison Holloway</item>
         <item>Chambers Road</item>
-        <item>Holloway / Nags Head</item>
-        <item>Seven Sisters Road / Nags Head</item>
+        <item>Holloway \/ Nags Head</item>
+        <item>Seven Sisters Road \/ Nags Head</item>
         <item>Hornsey Road</item>
         <item>Durham Road</item>
         <item>Fonthill Road</item>
         <item>Finsbury Park</item>
         <item>Blackstock Road</item>
         <item>Alexandra Grove Station</item>
-        <item>Manor House Station  / Woodberry Grove</item>
+        <item>Manor House Station  \/ Woodberry Grove</item>
         <item>Rowley Gardens North</item>
         <item>Endymion Road South</item>
         <item>Harringay Green Lane</item>
@@ -222,15 +222,15 @@
         <item>Clapton Square</item>
         <item>Pembury Circus</item>
         <item>Hackney Central Station</item>
-        <item>Graham Road / Hackney Central</item>
+        <item>Graham Road \/ Hackney Central</item>
         <item>Royal Oak Road</item>
         <item>Greenwood Road</item>
         <item>Stannard Road</item>
         <item>Dalston Junction</item>
-        <item>Balls Pond Road / Burder Road</item>
+        <item>Balls Pond Road \/ Burder Road</item>
         <item>Southgate Road</item>
-        <item>Essex Road / Newington Green Road</item>
-        <item>Essex Road / Marquess Road</item>
+        <item>Essex Road \/ Newington Green Road</item>
+        <item>Essex Road \/ Marquess Road</item>
         <item>Northchurch Road</item>
         <item>Essex Road</item>
         <item>Cross Street</item>
@@ -247,12 +247,12 @@
         <item>Bloomsbury Way</item>
         <item>Museum Street West</item>
         <item>Cambridge Circus West</item>
-        <item>Dean Street / Chinatown</item>
+        <item>Dean Street \/ Chinatown</item>
         <item>Trocadero</item>
         <item>Piccadilly Circus West</item>
         <item>Old Bond Street</item>
         <item>Green Park</item>
-        <item>Green Park / Constitution Hill</item>
+        <item>Green Park \/ Constitution Hill</item>
         <item>Hyde Park Corner</item>
         <item>Wilton Street West</item>
         <item>Bressenden Place</item>
@@ -263,12 +263,12 @@
         <item>Grosvenor Gardens</item>
         <item>Wilton Street</item>
         <item>Hyde Park</item>
-        <item>Old Park Lane / Hard Rock Cafe</item>
+        <item>Old Park Lane \/ Hard Rock Cafe</item>
         <item>Green Park Station</item>
-        <item>Old Bond Street / Royal Academy</item>
+        <item>Old Bond Street \/ Royal Academy</item>
         <item>Piccadilly Circus</item>
-        <item>Trocadero / Haymarket</item>
-        <item>Gerrard Place / Chinatown</item>
+        <item>Trocadero \/ Haymarket</item>
+        <item>Gerrard Place \/ Chinatown</item>
         <item>Tottenham Court Road West</item>
         <item>Museum Street</item>
         <item>Bloomsbury Square</item>
@@ -279,7 +279,7 @@
         <item>Tysoe Street</item>
         <item>Hardwick Street</item>
         <item>Sadler\'s Wells Theatre</item>
-        <item>St John Street / Goswell Road</item>
+        <item>St John Street \/ Goswell Road</item>
         <item>Angel Station</item>
         <item>Islington Green South</item>
         <item>Packington Street West</item>
@@ -287,17 +287,17 @@
         <item>Essex Road Station</item>
         <item>Northchurch Road South</item>
         <item>Ockendon Road</item>
-        <item>Mildmay Park / Southgate Road</item>
+        <item>Mildmay Park \/ Southgate Road</item>
         <item>Culford Road</item>
         <item>Kingsland High Street</item>
-        <item>Dalston Lane / Dalston Junction Station</item>
+        <item>Dalston Lane \/ Dalston Junction Station</item>
         <item>Stannard Road East</item>
         <item>Greenwood Road South</item>
         <item>Royal Oak Road East</item>
-        <item>Hackney Central/ Mare Street</item>
+        <item>Hackney Central\/ Mare Street</item>
         <item>Hackney Central</item>
-        <item>Amhurst Road / Hackney Downs Station</item>
-        <item>Mare Street / Narrow Way</item>
+        <item>Amhurst Road \/ Hackney Downs Station</item>
+        <item>Mare Street \/ Narrow Way</item>
         <item>Hackney Baths West</item>
         <item>Glenarm Road</item>
         <item>Clapton Girls\' Academy</item>
@@ -308,19 +308,19 @@
 
     <string-array name="root_1">
         <item>Holles Street</item>
-        <item>Great Titchfield St \/ Oxford Circus Stn</item>
+        <item>Great Titchfield St \\/ Oxford Circus Stn</item>
         <item>Tottenham Court Road Station</item>
         <item>New Oxford Street</item>
         <item>Procter Street</item>
         <item>Brownlow Street</item>
         <item>Chancery Lane Station</item>
-        <item>Holborn Circus \/ Fetter Lane</item>
+        <item>Holborn Circus \\/ Fetter Lane</item>
         <item>Holborn Circus</item>
         <item>City Thameslink Station</item>
         <item>King Edward Street</item>
         <item>St Paul\'s Station</item>
-        <item>Bank Station  \/ Poultry</item>
-        <item>Bank Station  \/ Cornhill</item>
+        <item>Bank Station  \\/ Poultry</item>
+        <item>Bank Station  \\/ Cornhill</item>
         <item>Bishopsgate</item>
         <item>St Mary Axe</item>
         <item>St Katharine Cree</item>
@@ -328,12 +328,12 @@
         <item>Aldgate East Station</item>
         <item>Adler Street</item>
         <item>The East London Mosque</item>
-        <item>Royal London Hospital \/ Whitechapel Stn</item>
+        <item>Royal London Hospital \\/ Whitechapel Stn</item>
         <item>Booth Memorial</item>
         <item>Stepney Green</item>
         <item>Stepney Green Station</item>
-        <item>Bancroft Road \/ Ocean Estate</item>
-        <item>Queen Mary \/ University Of London</item>
+        <item>Bancroft Road \\/ Ocean Estate</item>
+        <item>Queen Mary \\/ University Of London</item>
         <item>Regents Canal</item>
         <item>Mile End Station</item>
         <item>Coborn Road</item>
@@ -341,12 +341,12 @@
         <item>Bow Church Station</item>
         <item>Bow Church</item>
         <item>Warton Road</item>
-        <item>Stratford High St Stn  \/ Carpenters Road</item>
+        <item>Stratford High St Stn  \\/ Carpenters Road</item>
         <item>Stratford Bus Station</item>
         <item>Stratford Bus Station</item>
         <item>Stratford Centre</item>
         <item>Litchfield Avenue</item>
-        <item>Water Lane \/ University Of East London</item>
+        <item>Water Lane \\/ University Of East London</item>
         <item>Atherton Leisure Centre</item>
         <item>Margery Park Road</item>
         <item>Woodgrange Road</item>
@@ -378,14 +378,14 @@
         <item>Manor House Station</item>
         <item>Portland Rise</item>
         <item>Alexandra Grove</item>
-        <item>Finsbury Park \/ Blackstock Road</item>
+        <item>Finsbury Park \\/ Blackstock Road</item>
         <item>Finsbury Park Station</item>
         <item>Isledon Road</item>
         <item>Berriman Road</item>
         <item>Sobell Centre</item>
         <item>Holloway Road</item>
         <item>Caledonian Road</item>
-        <item>Hillmarton Road \/ H M Prison Holloway</item>
+        <item>Hillmarton Road \\/ H M Prison Holloway</item>
         <item>Hilldrop Road</item>
         <item>Brecknock Road</item>
         <item>Camden Park Road</item>
@@ -397,8 +397,8 @@
         <item>Mornington Crescent Station</item>
         <item>Silverdale</item>
         <item>Robert Street</item>
-        <item>Warren Street Station  \/ Euston Road</item>
-        <item>Gower Street \/ University College Hosp</item>
+        <item>Warren Street Station  \\/ Euston Road</item>
+        <item>Gower Street \\/ University College Hosp</item>
         <item>Torrington Place</item>
         <item>Chenies Street</item>
         <item>Great Russell Street</item>
@@ -406,7 +406,7 @@
         <item>Cambridge Circus</item>
         <item>Leicester Square Station</item>
         <item>St Martin\'s Place</item>
-        <item>Trafalgar Square \/ Charing Cross Stn</item>
+        <item>Trafalgar Square \\/ Charing Cross Stn</item>
         <item>Clapton Pond</item>
         <item>Millfields Road</item>
         <item>Clapton Girls\' Academy</item>
@@ -414,22 +414,22 @@
         <item>Clapton Square</item>
         <item>Pembury Circus</item>
         <item>Hackney Central Station</item>
-        <item>Graham Road \/ Hackney Central</item>
+        <item>Graham Road \\/ Hackney Central</item>
         <item>Royal Oak Road</item>
         <item>Greenwood Road</item>
         <item>Stannard Road</item>
         <item>Dalston Junction</item>
-        <item>Balls Pond Road \/ Burder Road</item>
+        <item>Balls Pond Road \\/ Burder Road</item>
         <item>Southgate Road</item>
-        <item>Essex Road \/ Newington Green Road</item>
-        <item>Essex Road \/ Marquess Road</item>
+        <item>Essex Road \\/ Newington Green Road</item>
+        <item>Essex Road \\/ Marquess Road</item>
         <item>Northchurch Road</item>
         <item>Essex Road Station</item>
         <item>Cross Street</item>
         <item>Packington Street</item>
         <item>Islington Green</item>
         <item>Angel Station</item>
-        <item>St John Street \/ Goswell Road</item>
+        <item>St John Street \\/ Goswell Road</item>
         <item>Sadler\'s Wells Theatre</item>
         <item>Finsbury Town Hall</item>
         <item>Mount Pleasant</item>
@@ -439,12 +439,12 @@
         <item>Bloomsbury Way</item>
         <item>Museum Street</item>
         <item>Cambridge Circus</item>
-        <item>Dean Street \/ Chinatown</item>
-        <item>Trocadero \/ Haymarket</item>
+        <item>Dean Street \\/ Chinatown</item>
+        <item>Trocadero \\/ Haymarket</item>
         <item>Piccadilly Circus</item>
-        <item>Old Bond Street \/ Royal Academy</item>
+        <item>Old Bond Street \\/ Royal Academy</item>
         <item>Green Park Station</item>
-        <item>Green Park \/ Constitution Hill</item>
+        <item>Green Park \\/ Constitution Hill</item>
         <item>Hyde Park Corner</item>
         <item>Wilton Street</item>
         <item>Bressenden Place</item>
@@ -469,10 +469,10 @@
         <item>Sprowston Road</item>
         <item>Margery Park Road</item>
         <item>Atherton Leisure Centre</item>
-        <item>Water Lane \/ University Of East London</item>
+        <item>Water Lane \\/ University Of East London</item>
         <item>Stratford Centre</item>
         <item>Old Town Hall</item>
-        <item>Stratford High St \/ Carpenters Road</item>
+        <item>Stratford High St \\/ Carpenters Road</item>
         <item>Warton Road</item>
         <item>Abbey Lane</item>
         <item>Bow Church</item>
@@ -481,33 +481,33 @@
         <item>Coborn Road</item>
         <item>Mile End Station</item>
         <item>Regents Canal</item>
-        <item>Queen Mary \/ University Of London</item>
+        <item>Queen Mary \\/ University Of London</item>
         <item>Ocean Estate</item>
         <item>Stepney Green Station</item>
         <item>Stepney Green</item>
         <item>Booth Memorial</item>
         <item>Sidney Street</item>
         <item>Whitechapel Station</item>
-        <item>Whitechapel Station  \/ Royal London Hosp</item>
+        <item>Whitechapel Station  \\/ Royal London Hosp</item>
         <item>The East London Mosque</item>
         <item>Adler Street</item>
         <item>Aldgate East Station</item>
         <item>Aldgate Station</item>
-        <item>Bank Station  \/ Cornhill</item>
-        <item>Poultry \/ Bank Station</item>
+        <item>Bank Station  \\/ Cornhill</item>
+        <item>Poultry \\/ Bank Station</item>
         <item>Bread Street</item>
         <item>St Paul\'s Station</item>
         <item>City Thameslink Station</item>
         <item>Holborn Circus</item>
-        <item>Holborn Circus \/ Fetter Lane</item>
+        <item>Holborn Circus \\/ Fetter Lane</item>
         <item>Chancery Lane Station</item>
         <item>Brownlow Street</item>
         <item>Holborn Station</item>
-        <item>New Oxford Street \/ High Holborn</item>
+        <item>New Oxford Street \\/ High Holborn</item>
         <item>Tottenham Court Road Station</item>
-        <item>Oxford Street \/ Soho Street</item>
+        <item>Oxford Street \\/ Soho Street</item>
         <item>Wardour Street</item>
-        <item>Great Titchfield St \/ Oxford Circus Stn</item>
+        <item>Great Titchfield St \\/ Oxford Circus Stn</item>
         <item>Holles Street</item>
         <item>Charing Cross Stn</item>
         <item>Leicester Square Station</item>
@@ -517,13 +517,13 @@
         <item>Percy Street</item>
         <item>Goodge Street Station</item>
         <item>Warren Street Station</item>
-        <item>Hampstead Road \/ Drummond Street</item>
+        <item>Hampstead Road \\/ Drummond Street</item>
         <item>Robert Street</item>
         <item>Silverdale</item>
         <item>Mornington Crescent Station</item>
         <item>Camden High Street</item>
         <item>Camden Town Station</item>
-        <item>Camden Town \/ Camden Road</item>
+        <item>Camden Town \\/ Camden Road</item>
         <item>Camden Road Station</item>
         <item>St Pancras Way</item>
         <item>Murray Street</item>
@@ -533,15 +533,15 @@
         <item>Hilldrop Road</item>
         <item>H M Prison Holloway</item>
         <item>Chambers Road</item>
-        <item>Holloway \/ Nags Head</item>
-        <item>Seven Sisters Road \/ Nags Head</item>
+        <item>Holloway \\/ Nags Head</item>
+        <item>Seven Sisters Road \\/ Nags Head</item>
         <item>Hornsey Road</item>
         <item>Durham Road</item>
         <item>Fonthill Road</item>
         <item>Finsbury Park Station</item>
-        <item>Finsbury Park \/ Blackstock Road</item>
+        <item>Finsbury Park \\/ Blackstock Road</item>
         <item>Alexandra Grove</item>
-        <item>Manor House Station  \/ Woodberry Grove</item>
+        <item>Manor House Station  \\/ Woodberry Grove</item>
         <item>Rowley Gardens</item>
         <item>Endymion Road</item>
         <item>Harringay Green Lanes Station</item>
@@ -556,12 +556,12 @@
         <item>Grosvenor Gardens</item>
         <item>Wilton Street</item>
         <item>Hyde Park Corner</item>
-        <item>Old Park Lane \/ Hard Rock Cafe</item>
+        <item>Old Park Lane \\/ Hard Rock Cafe</item>
         <item>Green Park Station</item>
-        <item>Old Bond Street \/ Royal Academy</item>
+        <item>Old Bond Street \\/ Royal Academy</item>
         <item>Piccadilly Circus</item>
-        <item>Trocadero \/ Haymarket</item>
-        <item>Gerrard Place \/ Chinatown</item>
+        <item>Trocadero \\/ Haymarket</item>
+        <item>Gerrard Place \\/ Chinatown</item>
         <item>Tottenham Court Road Station</item>
         <item>Museum Street</item>
         <item>Bloomsbury Square</item>
@@ -572,7 +572,7 @@
         <item>Tysoe Street</item>
         <item>Hardwick Street</item>
         <item>Sadler\'s Wells Theatre</item>
-        <item>St John Street \/ Goswell Road</item>
+        <item>St John Street \\/ Goswell Road</item>
         <item>Angel Station</item>
         <item>Islington Green</item>
         <item>Packington Street</item>
@@ -580,17 +580,17 @@
         <item>Essex Road Station</item>
         <item>Northchurch Road</item>
         <item>Ockendon Road</item>
-        <item>Mildmay Park \/ Southgate Road</item>
+        <item>Mildmay Park \\/ Southgate Road</item>
         <item>Culford Road</item>
         <item>Kingsland High Street</item>
-        <item>Dalston Lane \/ Dalston Junction Station</item>
+        <item>Dalston Lane \\/ Dalston Junction Station</item>
         <item>Stannard Road</item>
         <item>Greenwood Road</item>
         <item>Royal Oak Road</item>
-        <item>Hackney Central\/ Mare Street</item>
+        <item>Hackney Central\\/ Mare Street</item>
         <item>Hackney Central Station</item>
-        <item>Amhurst Road \/ Hackney Downs Station</item>
-        <item>Mare Street \/ Narrow Way</item>
+        <item>Amhurst Road \\/ Hackney Downs Station</item>
+        <item>Mare Street \\/ Narrow Way</item>
         <item>Hackney Baths</item>
         <item>Glenarm Road</item>
         <item>Clapton Girls\' Academy</item>
@@ -1177,7 +1177,7 @@
         <item>Dalston Lane \/ Dalston Junction Station</item>
         <item>Clapton Girls\' Academy</item>
         <item>Tysoe Street</item>
-        <item>Hackney Central \/ Mare Street</item>
+        <item>Hackney Central\/ Mare Street</item>
         <item>Royal Oak Road</item>
         <item>Rosebery Avenue</item>
         <item>Greenwood Road</item>

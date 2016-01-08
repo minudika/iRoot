@@ -37,7 +37,7 @@ import wso2.org.utils.XMLParser;
 public class MainWindow extends Activity {
     Spinner spinnerStartLocation;
     Spinner spinnerEndLocation;
-    Spinner spinner;
+    Spinner spinnerFrom,spinnerTo;
     Button btnSubmit,btnPickTime;
     TimePicker timePicker;
     AutoCompleteTextView autoCompleteTextView_from,autoCompleteTextView_to;
@@ -82,7 +82,8 @@ public class MainWindow extends Activity {
         setContentView(R.layout.activity_main_window);
 
         autoCompleteTextView_from=(AutoCompleteTextView)findViewById(R.id.autoCompleteTextView_from);
-        spinner = (Spinner) findViewById(R.id.spinner);
+        spinnerTo = (Spinner) findViewById(R.id.spinner_to);
+        spinnerFrom = (Spinner) findViewById(R.id.spinner_from);
         btnPickTime=(Button)findViewById(R.id.btnPickTime);
         txtViewDisplayTime = (TextView)findViewById(R.id.textView_displayTime);
         btnSubmit = (Button) findViewById(R.id.button_submit);
@@ -115,7 +116,7 @@ public class MainWindow extends Activity {
         post2 = new HttpPost(url);
 
 
-        spinner.setEnabled(false);
+        spinnerTo.setEnabled(false);
 
         // Get a reference to the AutoCompleteTextView in the layout
 
@@ -124,7 +125,8 @@ public class MainWindow extends Activity {
         // Create the adapter and set it to the AutoCompleteTextView
         ArrayAdapter<String> adapter_from =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, allLocations);
-        autoCompleteTextView_from.setAdapter(adapter_from);
+        //autoCompleteTextView_from.setAdapter(adapter_from);
+        spinnerFrom.setAdapter(adapter_from);
 
 
 
@@ -139,12 +141,13 @@ public class MainWindow extends Activity {
             }
         });
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-
+        spinnerFrom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                stringTo = spinner.getItemAtPosition(position).toString();
-                View v = spinner.getSelectedView();
+                stringFrom = spinnerFrom.getItemAtPosition(position).toString();
+                btnSubmit.setEnabled(false);
+                populateDestinationList();
+                View v = spinnerFrom.getSelectedView();
                 ((TextView) v).setTextColor(-1);
             }
 
@@ -153,6 +156,22 @@ public class MainWindow extends Activity {
 
             }
         });
+
+        spinnerTo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                stringTo = spinnerTo.getItemAtPosition(position).toString();
+                View v = spinnerTo.getSelectedView();
+                ((TextView) v).setTextColor(-1);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
 
 
@@ -226,9 +245,9 @@ public class MainWindow extends Activity {
         List list = getEndLocations(stringFrom);
         if(list.size() != 0) {
             ArrayAdapter<String> adp = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, getEndLocations(stringFrom));
-            spinner.setEnabled(true);
+            spinnerTo.setEnabled(true);
             btnSubmit.setEnabled(true);
-            spinner.setAdapter(adp);
+            spinnerTo.setAdapter(adp);
             return true;
         }
         else{
@@ -241,7 +260,7 @@ public class MainWindow extends Activity {
                             dialog.dismiss();
                         }
                     }).create().show();
-            spinner.setEnabled(false);
+            spinnerTo.setEnabled(false);
             autoCompleteTextView_from.setText("");
             btnSubmit.setEnabled(false);
             return false;
@@ -279,17 +298,23 @@ public class MainWindow extends Activity {
             switch(rootId){
                 case 25:
                     for (int i = index1 + 1; i < root25_1.length; i++) {
-                        endLocations.add(root25_1[i]);
+                        if(endLocations.indexOf(root25_1[i])==-1) {
+                            endLocations.add(root25_1[i]);
+                        }
                     }
                     break;
                 case 29:
                     for (int i = index1 + 1; i < root29_1.length; i++) {
-                        endLocations.add(root29_1[i]);
+                        if(endLocations.indexOf(root29_1[i])==-1) {
+                            endLocations.add(root29_1[i]);
+                        }
                     }
                     break;
                 case 38:
                     for (int i = index1 + 1; i < root38_1.length; i++) {
-                        endLocations.add(root38_1[i]);
+                        if(endLocations.indexOf(root38_1[i])==-1) {
+                            endLocations.add(root38_1[i]);
+                        }
                     }
                     break;
             }
@@ -299,17 +324,23 @@ public class MainWindow extends Activity {
             switch(rootId){
                 case 25:
                     for (int i = index2 + 1; i < root25_2.length; i++) {
-                        endLocations.add(root25_2[i]);
+                        if(endLocations.indexOf(root25_2[i])==-1) {
+                            endLocations.add(root25_2[i]);
+                        }
                     }
                     break;
                 case 29:
                     for (int i = index2 + 1; i < root29_2.length; i++) {
-                        endLocations.add(root29_2[i]);
+                        if(endLocations.indexOf(root29_2[i])==-1) {
+                            endLocations.add(root29_2[i]);
+                        }
                     }
                     break;
                 case 38:
                     for (int i = index2 + 1; i < root38_2.length; i++) {
-                        endLocations.add(root38_2[i]);
+                        if(endLocations.indexOf(root38_2[i])==-1) {
+                            endLocations.add(root38_2[i]);
+                        }
                     }
                     break;
             }
